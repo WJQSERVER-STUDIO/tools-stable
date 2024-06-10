@@ -1,0 +1,11 @@
+$siteurl {
+    root * /var/www/html/wordpress
+    file_server
+    php_fastcgi unix//run/php/php8.2-fpm.sock {
+        import header_realip
+    }
+    import log wordpress
+    import error_page
+    import encode  
+    import cache 0s 200s
+}

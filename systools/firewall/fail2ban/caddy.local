@@ -1,0 +1,10 @@
+[caddy]
+enabled = true
+port = http,https
+filter = caddy-rate-limit
+maxretry = 5
+bantime = 300
+findtime = 600
+# replace with the correct path
+logpath = /root/data/caddy/log/:8080/access.log
+action = ufw

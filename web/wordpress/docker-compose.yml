@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  caddy:
+    image: wjqserver/caddy
+    container_name: caddy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./caddy/config:/data/caddy/config
+      - ./caddy/config.d:/data/caddy/config.d
+      - ./caddy/log:/data/caddy/log
+      - ./html:/var/www/html
+
+  php:
+    image: php:fpm
+    container_name: php
+    restart: always
+    volumes:
+      - ./html:/var/www/html

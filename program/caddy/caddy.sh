@@ -47,4 +47,4 @@ chown root:root /root/data/caddy/Caddyfile
 systemctl daemon-reload
 systemctl enable caddy.service
 systemctl start caddy.service
-echo -e "[${green}OK${white}] $mikublue 6/11 caddy安装完成" $white
+echo -e "[${green}OK${white}] $mikublue caddy安装完成" $white

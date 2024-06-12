@@ -25,3 +25,4 @@ wget -O tools-stable-mirror-us.sh https://tools.1888866.xyz/tools-stable-mirror-
 
 # 维护中
 部分功能还在测试
+目前仓库同步迁移中,部分功能还未从上游仓库同步

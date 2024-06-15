@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "开始安装Docker"
+
 # 安装 Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh

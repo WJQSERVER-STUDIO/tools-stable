@@ -7,7 +7,7 @@ This project (hereinafter referred to as "this tool"), GitHub repository address
 It aims to provide a platform for programming learning, research, or technical discussions and does not guarantee the availability, safety, effectiveness, or legality of any features.
 
 在使用本工具之前，请用户确保该使用符合中华人民共和国(中國大陸)、美国、香港特別行政區及用户所在地（包括但不限于运行环境或设备所在地）的相关法律法规要求和限制。  
-Before using this tool, users should ensure that their use complies with the relevant laws and regulations of the People's Republic of China (Mainland China), the United States, the Hong Kong Special Administrative Region, and the user's location (including but not limited to the location of the operating environment or device).
+Before using this tool, users should ensure that their use complies with the relevant laws and regulations of the PRC (Mainland), the USA, the Hong Kong SAR, and the user's location (including but not limited to the location of the operating environment or device).
 
 ## 用户责任 User Responsibility
 

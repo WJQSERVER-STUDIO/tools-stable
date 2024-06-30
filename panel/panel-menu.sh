@@ -72,6 +72,11 @@ function casaos(){
 curl -fsSL https://get.casaos.io | sudo bash
 }
 
+#MCSManager面板
+function mcsm(){
+    sudo su -c "wget -qO- https://script.mcsmanager.com/setup_cn.sh | bash"
+}
+
 #返回主脚本
 function back(){
     wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
@@ -89,6 +94,7 @@ function start_menu(){
     green " 2. 宝塔面板"
     green " 3. aaPanel面板(宝塔国际版)"
     green " 4. CasaOS面板" 
+    green " 5. MCSManager面板"
     yellow " =================================================="
     green " 0. 返回主脚本"
     echo
@@ -106,6 +112,9 @@ function start_menu(){
         4 )
 	       casaos
         ;;
+	5 )
+           mcsm
+	;;   
         0 )
            back
         ;;

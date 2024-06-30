@@ -76,15 +76,21 @@ function x-ui_f(){
 bash <(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/install.sh) 0.3.4.4
 }
 
-#3X-UI_伊朗魔改版x-ui
+#3X-UI
 function 3x-ui(){
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh) v2.3.6
+}
+
+#3X-UI_中文魔改版
+function 3x-ui-cn(){
+bash <(curl -Ls https://raw.githubusercontent.com/xeefei/3x-ui/master/install.sh) v2.3.7
 }
 
 #ArgoX F大
 function argox(){
     bash <(wget -qO- https://raw.githubusercontent.com/fscarmen/argox/main/argox.sh)
 }
+
 #返回主脚本
 function back(){
     wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
@@ -103,10 +109,11 @@ function start_menu(){
     green " 2. WARP"
     green " 3. WARP-GO"
     yellow " =================================================="
-    green " 4. X-UI原版" 
-    green " 5. X-UI_FranzKafkaYu分支版"
-    green " 7. 3X-UI_伊朗魔改版x-ui"
-    green " 8. ArgoX"
+    green " 4. X-UI" 
+    green " 5. X-UI_FranzKafkaYu分支"
+    green " 7. 3X-UI"
+    green " 8. 3X-UI中文魔改版"
+    green " 9. ArgoX"
     yellow " =================================================="
     green " 0. 返回主脚本"
     echo
@@ -134,8 +141,11 @@ function start_menu(){
            3x-ui
 	    ;;   
         8 )
+           3x-ui-cn
+        ;;
+	9 )
            argox
-        ;;      
+        ;;
         0 )
            back
         ;;

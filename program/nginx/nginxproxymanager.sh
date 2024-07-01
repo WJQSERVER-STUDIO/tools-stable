@@ -28,7 +28,7 @@ echo "正在启动 Nginx Proxy Manager..."
 docker-compose -f /root/data/docker_data/npm/docker-compose.yml up -d
 
 echo "Nginx Proxy Manager 已成功部署！"
-echo "可以通过 http://<服务器IP>:81 访问 Nginx Proxy Manager。"
+echo "面板服務已開啟在 http://<服务器IP>:81 "
 
 #回到root目录
 cd /root

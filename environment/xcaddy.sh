@@ -28,3 +28,13 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/xcadd
 echo -e "${green}>${white} $mikublue 安裝XCaddy" $white
 apt update
 apt install xcaddy
+
+cd /root
+source "repo_url.conf"
+sleep 1
+read -p "是否返回菜单?: [Y/n]" choice
+if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+    wget -O environment-menu.sh ${repo_url}environment/environment-menu.sh && chmod +x environment-menu.sh && ./environment-menu.sh
+else
+    echo "脚本结束"
+fi

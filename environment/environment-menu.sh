@@ -43,32 +43,14 @@ mikublue(){
     echo -e "\033[38;2;57;197;187m$\033[0m"
 }
 
-#
-function (){
+#GO
+function go(){
+	wget -O golang.sh ${repo_url}environment/golang.sh && chmod +x golang.sh && ./golang.sh
 }
 
-#
-function (){
-}
-
-#
-function (){
-}
-
-#
-function (){
-}
-
-#
-function (){
-}
-
-#
-function (){
-}
-
-#
-function (){
+#Xcaddy
+function xcaddy(){
+	wget -O xcaddy.sh ${repo_url}environment/xcaddy.sh && chmod +x xcaddy.sh && ./xcaddy.sh
 }
 
 #返回主脚本
@@ -86,21 +68,16 @@ function start_menu(){
     yellow " =================================================="
     green " 1. GO环境" 
     green " 2. XCaddy环境"
-    green " 3. "
-    green " 4. " 
-    green " 5. "
-    green " 6. "
-    green " 7. "
     yellow " =================================================="
     green " 0. 返回主脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           #
+           go
         ;;
         2 )
-           #
+           xcaddy
         ;;
        3 )
            #

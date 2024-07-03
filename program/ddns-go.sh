@@ -7,11 +7,11 @@ mkdir -p /root/data/ddns_go
 cd /root/data/ddns_go
 
 #下载
-wget https://github.com/jeessy2/ddns-go/releases/latest/download/ddns-go_6.1.2_linux_x86_64.tar.gz
+wget https://github.com/jeessy2/ddns-go/releases/latest/download/ddns-go_6.6.3_linux_x86_64.tar.gz
 
 #解压
-tar -xzvf ddns-go_6.1.2_linux_x86_64.tar.gz
-rm ddns-go_6.1.2_linux_x86_64.tar.gz
+tar -xzvf ddns-go_6.6.3_linux_x86_64.tar.gz
+rm ddns-go_6.6.3_linux_x86_64.tar.gz
 
 #赋权
 chmod +x /root/data/ddns_go/ddns-go

@@ -124,7 +124,7 @@ function start_menu(){
 	
         * )
             clear
-            red "请输入正确数字 !"
+            red "请输入正确数字!"
             start_menu
         ;;
     esac

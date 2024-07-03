@@ -10,17 +10,17 @@ blue='\033[0;34m'
 red='\033[31m'
 gray='\e[37m'
 
-echo -e "[${yellow}RUN${white}] $mikublue 開始安裝GO環境" $white
-echo -e "${green}>${white} $mikublue 拉取安裝包" $white
+echo -e "[${green}RUN${white}] $mikublue 開始安裝GO環境" $white
+echo -e "${green}>${white} $mikublue     拉取安裝包" $white
 wget -q https://go.dev/dl/go1.22.5.linux-amd64.tar.gz
-echo -e "${green}>${white} $mikublue 清理目錄" $white
-echo -e "${green}>${white} $mikublue 解壓安裝包" $white
+echo -e "${green}>${white} $mikublue     清理目錄" $white
+echo -e "${green}>${white} $mikublue     解壓安裝包" $white
 rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.5.linux-amd64.tar.gz
-echo -e "${green}>${white} $mikublue 添加環境變量" $white
+echo -e "${green}>${white} $mikublue     添加環境變量" $white
 echo "export PATH=\$PATH:/usr/local/go/bin" >> /etc/profile
-echo -e "${green}>${white} $mikublue 導入變量" $white
+echo -e "${green}>${white} $mikublue     導入變量" $white
 source /etc/profile
-echo -e "${green}>${white} $mikublue 測試安裝狀態" $white
+echo -e "${green}>${white} $mikublue     測試安裝狀態" $white
 go version
 
 #回到root目录

@@ -91,7 +91,7 @@
 :80 {
 	root * /root/data/caddy/pages/demo
     file_server
-    import cache 0s 200s
+    import cache 0s 24h
     import log 80
     import error_page  
     import encode

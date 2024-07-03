@@ -115,7 +115,7 @@ function start_menu(){
            #
         ;;
         7 )
-           7
+           #
         ;;   
 
         0 )

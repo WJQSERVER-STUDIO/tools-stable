@@ -10,7 +10,7 @@ blue='\033[0;34m'
 red='\033[31m'
 gray='\e[37m'
 
-echo -e "[${yellow}RUN${white}] $mikublue 開始安裝GO環境" $white
+echo -e "[${green}RUN${white}] $mikublue 開始安裝GO環境" $white
 echo -e "${green}>${white} $mikublue 拉取安裝包" $white
 wget -q https://go.dev/dl/go1.22.5.linux-amd64.tar.gz
 echo -e "${green}>${white} $mikublue 清理目錄" $white

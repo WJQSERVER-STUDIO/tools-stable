@@ -62,6 +62,11 @@ function web(){
     wget -O web-menu.sh ${repo_url}web/web-menu.sh && chmod +x web-menu.sh && ./web-menu.sh
 }
 
+#环境部署
+function environment(){
+    wget -O environment-menu.sh ${repo_url}environment/environment-menu.sh && chmod +x environment-menu.sh && ./environment-menu.sh
+}
+
 #更多脚本
 function bash(){
     wget -O bashmenu.sh ${repo_url}bash/bashmenu.sh && chmod +x bashmenu.sh && ./bashmenu.sh    
@@ -87,10 +92,11 @@ function start_menu(){
     green " 5. 项目部署"
     green " 6. 测试工具"
     green " 7. 网站部署"
+    green " 8. 环境部署"
     yellow " =================================================="
-    green " 8. 更多脚本"
+    green " 9. 更多脚本"
     yellow " =================================================="
-    green " 9. 代理部署"
+    green " 10. 代理部署"
     yellow " =================================================="
     green " 0. 退出脚本"
     echo
@@ -118,12 +124,14 @@ function start_menu(){
            web
 	    ;;
         8 )
-           bash
+           environment
         ;;
         9 )
+           bash
+        ;;
+        10 )
            proxy
         ;;
-
         0 )
            exit 1
         ;;

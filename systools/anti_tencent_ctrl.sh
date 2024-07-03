@@ -1,7 +1,7 @@
 #! /bin/bash
 #删除腾讯云控,保护隐私安全
 
-echo -e "[${yellow}RUN${white}] $mikublue 開始刪除騰訊雲控" $whit
+echo -e "[${yellow}RUN${white}] $mikublue 開始刪除騰訊雲控" $white
 
 sleep 1
 

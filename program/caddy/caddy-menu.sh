@@ -34,7 +34,7 @@ function caddy_only(){
 
 #cache
 function caddy_cache(){
-    wget -O caddy-cache.sh ${repo_url}program/caddy/caddy-cache.sh && chmod +x caddy-cache.sh && ./caddy-cache.sh
+    wget -O caddy.sh ${repo_url}program/caddy/caddy.sh && chmod +x caddy.sh && ./caddy.sh
 }
 
 #返回主脚本

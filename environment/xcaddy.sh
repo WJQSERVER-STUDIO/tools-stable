@@ -2,6 +2,14 @@
 #https://github.com/WJQSERVER/tools-stable
 # deploy XCaddy environment
 
+mikublue="\033[38;2;57;197;187m"
+yellow='\033[33m'
+white='\033[0m'
+green='\033[0;32m'
+blue='\033[0;34m'
+red='\033[31m'
+gray='\e[37m'
+
 echo -e "[${yellow}RUN${white}] $mikublue 開始安裝XCaddy環境" $white
 echo -e "${green}>${white} $mikublue 更新軟件包" $white
 apt update

@@ -2,6 +2,14 @@
 #https://github.com/WJQSERVER/tools-stable
 # deploy golang environment
 
+mikublue="\033[38;2;57;197;187m"
+yellow='\033[33m'
+white='\033[0m'
+green='\033[0;32m'
+blue='\033[0;34m'
+red='\033[31m'
+gray='\e[37m'
+
 echo -e "[${yellow}RUN${white}] $mikublue 開始安裝GO環境" $white
 echo -e "${green}>${white} $mikublue 拉取安裝包" $white
 wget -q https://go.dev/dl/go1.22.5.linux-amd64.tar.gz

@@ -97,26 +97,26 @@ function start_menu(){
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           1
-	    ;;
+           #
+        ;;
         2 )
-	       2
+           #
         ;;
-	    3 )
-           3
-	    ;;
+       3 )
+           #
+        ;;
         4 )
-	       4
+           #
         ;;
-	    5 )
-           5
-	    ;;
+        5 )
+           #
+        ;;
         6 )
-	       6
+           #
         ;;
-	    7 )
+        7 )
            7
-	    ;;   
+        ;;   
 
         0 )
            back

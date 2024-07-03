@@ -1,6 +1,6 @@
 #! /bin/bash
 # By WJQSERVER-STUDIO_WJQSERVER
-#https://github.com/WJQSERVER/tools-dev
+#https://github.com/WJQSERVER/tools-stable
 
 clear
 

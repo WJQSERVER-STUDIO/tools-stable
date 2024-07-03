@@ -1,6 +1,6 @@
 #! /bin/bash
 # By WJQSERVER-STUDIO_WJQSERVER
-#https://github.com/WJQSERVER/tools-dev
+#https://github.com/WJQSERVER/tools-stable
 
 # 显示免责声明
 #"免责声明：请阅读并同意以下条款才能继续使用本程序。"

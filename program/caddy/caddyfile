@@ -97,12 +97,4 @@
     import encode
 }
 
-:9000 {
-    reverse_proxy * 172.20.20.10:5001
-    import cache 0s 200s
-    import log dockge
-    import error_page
-    import encode
-}
-
 import /root/data/caddy/config/*

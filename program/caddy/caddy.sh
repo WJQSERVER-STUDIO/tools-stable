@@ -1,16 +1,25 @@
 #! /bin/bash
-#https://github.com/WJQSERVER/tools-stable
+#https://github.com/WJQSERVER－STUDIO/tools-stable
 
 clear
 
+echo -e "[${yellow}RUN${white}] $mikublue 開始安裝Caddy" $white
+
+echo -e "${green}>${white} $mikublue 創建安裝目錄" $white
 mkdir -p /root/data/caddy
 mkdir -p /root/data/caddy/config
+echo -e "${green}>${white} $mikublue 下載主程序" $white
 wget -O /root/data/caddy/caddy.tar.gz https://github.com/WJQSERVER/caddy/releases/download/2.8.4/caddy-linux-amd64-pages.tar.gz
+echo -e "${green}>${white} $mikublue 解壓程序及其資源" $white
 tar -xzvf /root/data/caddy/caddy.tar.gz -C /root/data/caddy
+echo -e "${green}>${white} $mikublue 清理安裝資源" $white
 rm /root/data/caddy/caddy.tar.gz
+echo -e "${green}>${white} $mikublue 設置程序運行權限" $white
 chmod +x /root/data/caddy/caddy
 chown root:root /root/data/caddy/caddy
- 
+
+echo -e "${green}>${white} $mikublue 創建SERVICE文件" $white
+
 cat <<EOF > /etc/systemd/system/caddy.service
 [Unit]
 Description=Caddy
@@ -36,6 +45,7 @@ WantedBy=multi-user.target
 
 EOF
 
+echo -e "${green}>${white} $mikublue 拉取Caddyfile配置" $white
 wget -O /root/data/caddy/Caddyfile https://raw.githubusercontent.com/WJQSERVER/tools-stable/main/program/caddy/caddyfile
 
 #./caddy add-package github.com/caddyserver/cache-handler
@@ -43,7 +53,7 @@ wget -O /root/data/caddy/Caddyfile https://raw.githubusercontent.com/WJQSERVER/t
 #./caddy add-package github.com/caddyserver/transform-encoder
 #./caddy add-package github.com/RussellLuo/caddy-ext/ratelimit
 #./caddy add-package github.com/caddy-dns/cloudflare
-chown root:root /root/data/caddy/Caddyfile
+echo -e "${green}>${white} $mikublue 啟動程序" $white
 systemctl daemon-reload
 systemctl enable caddy.service
 systemctl start caddy.service

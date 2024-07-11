@@ -1,6 +1,14 @@
 #! /bin/bash
 #https://github.com/WJQSERVER－STUDIO/tools-stable
 
+mikublue="\033[38;2;57;197;187m"
+yellow='\033[33m'
+white='\033[0m'
+green='\033[0;32m'
+blue='\033[0;34m'
+red='\033[31m'
+gray='\e[37m'
+
 clear
 
 echo -e "[${yellow}RUN${white}] $mikublue 開始安裝Caddy" $white

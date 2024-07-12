@@ -48,7 +48,7 @@ upgrade() {
     return 0
 }
 
-install wget curl vim git sudo
+install wget curl vim git sudo tar
 upgrade
 
 wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && clear && ./main.sh

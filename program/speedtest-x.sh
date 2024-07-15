@@ -28,7 +28,7 @@ services:
 EOF
 
 # 启动容器
-docker-compose up -d
+docker compose up -d
 
 # 等待容器启动
 sleep 5

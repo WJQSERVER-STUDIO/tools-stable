@@ -24,7 +24,7 @@ networks:
 EOF
 
 # 启动容器
-docker-compose up -d
+docker compose up -d
 
 # 提示服务访问地址
 echo "服务已成功启动！"

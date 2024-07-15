@@ -28,7 +28,3 @@ wget -O tools-stable-cn.sh https://gh.1888866.xyz/https://raw.githubusercontent.
 请确定你的用途符合 你当地和运行环境/设备的 相关法律法规的要求和限制
 
 若要详细查看,请阅读[免责声明](https://github.com/WJQSERVER-STUDIO/tools-stable/blob/main/disclaimer.md)
-
-# 维护中
-部分功能还在测试
-目前仓库同步迁移中,部分功能还未从上游仓库同步

@@ -17,7 +17,7 @@ echo -e "${red}免责声明：请阅读并同意以下条款才能继续使用�
 echo -e "${yellow}本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
 echo -e "${yellow}使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
 echo -e "${yellow}不提供/保证任何功能的可用性，安全性，有效性，合法性${white}"
-echo -e "${yellow}第三方脚本内出现的信息与本团队无关，脚本内的广告并非团队投放，请注意辨别${white}"
+echo -e "${yellow}第三方脚本内出现的信息与本团队无关，脚本内的广告并非本团队投放，请注意辨别${white}"
 
 # 导入配置文件
 source "repo_url.conf"
@@ -251,13 +251,14 @@ function back(){
     fi
 }
 
+clear
 #主菜单
 function start_menu(){
     clear
-    yellow " WJQserver Studio的快捷工具箱 BETA版 "
-    green " WJQserver Studio tools BETA" 
-    yellow " FROM: https://github.com/WJQSERVER/tools-dev "
-    green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
+    yellow " WJQserver Studio工具箱 "
+    green " WJQserver Studio tools " 
+    yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
+    green " USE:  wget -O tools-stable.sh ${repo_url}tools-stable.sh && chmod +x tools-stable.sh && clear && ./tools-stable.sh "
     yellow " =================================================="
     green " 1. ChatGPT解锁" 
     green " 2. Region流媒体解锁测试"

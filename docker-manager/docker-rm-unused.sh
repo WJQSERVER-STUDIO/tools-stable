@@ -1,27 +1,27 @@
 #!/bin/bash
 
-# 清理无用镜像
+# 清理未使用镜像
 cleanup_images() {
     docker image prune -af
-    echo "已清理无用镜像."
+    echo "已清理未使用镜像."
 }
 
-# 清理无用容器
+# 清理未使用容器
 cleanup_containers() {
     docker container prune -f
-    echo "已清理无用容器."
+    echo "已清理未使用容器."
 }
 
-# 清理无用卷
+# 清理未使用卷
 cleanup_volumes() {
     docker volume prune -f
-    echo "已清理无用卷."
+    echo "已清理未使用卷."
 }
 
 # 清理无用网络
 cleanup_networks() {
     docker network prune -f
-    echo "已清理无用网络."
+    echo "已清理未使用网络."
 }
 
 back(){
@@ -62,12 +62,12 @@ main() {
         cleanup_networks
         back
     else
-        echo "请选择要清理的内容:"
+        echo "请选择需要释放的资源:"
         echo "1. 镜像"
         echo "2. 容器"
         echo "3. 卷"
         echo "4. 网络"
-        echo "5. 全部清理"
+        echo "5. 全部释放"
         echo "0. 取消"
         read -p "请输入选项数字: " choice
 
@@ -92,7 +92,7 @@ main() {
                 back
                 ;;
             0)
-                echo "取消清理."
+                echo "取消释放."
                 ;;
             *)
                 echo "无效的选项: $choice"

@@ -121,35 +121,35 @@ function start_menu(){
     case "$menuNumberInput" in
         1 )
            bbr-manager
-	    ;;
+        ;;
         2 )
-	       warp
+           warp
         ;;
-	    3 )
+        3 )
            warp-go
-	    ;;
+        ;;
         4 )
-	       x-ui
+           x-ui
         ;;
-	    5 )
+        5 )
            x-ui_f
-	    ;;
-        6 )
-	       x-ui_yg
         ;;
-	    7 )
+        6 )
+           x-ui_yg
+        ;;
+        7 )
            3x-ui
-	    ;;   
+        ;;   
         8 )
            3x-ui-cn
         ;;
-	9 )
+        9 )
            argox
         ;;
         0 )
            back
         ;;
-	
+        
         * )
             clear
             red "请输入正确数字 !"

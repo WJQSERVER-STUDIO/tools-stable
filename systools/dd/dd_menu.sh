@@ -81,14 +81,14 @@ function back(){
     wget -O systools-menu.sh ${repo_url}systools/systools-menu.sh && chmod +x systools-menu.sh && ./systools-menu.sh
 }
 
+clear
 #主菜单
 function start_menu(){
     clear
     yellow " WJQserver Studio 工具箱 Stable"
-    green " WJQserver Studio tools-stable" 
     yellow " FROM: https://github.com/WJQSERVER/tools-stable "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
-    yellow " DD Script FROM: https://github.com/leitbogioro/Tools"
+    yellow " DD脚本 FROM: https://github.com/leitbogioro/Tools"
     yellow " =================================================="
     green " 1. Debian-12" 
     green " 2. Debian-11"

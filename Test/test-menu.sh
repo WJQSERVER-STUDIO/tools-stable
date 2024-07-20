@@ -1,5 +1,5 @@
 #! /bin/bash
-# By WJQSERVER-STUDIO_WJQSERVER
+# By WJQSERVER-STUDIO
 #https://github.com/WJQSERVER/tools-stable
 
 mikublue="\033[38;2;57;197;187m"

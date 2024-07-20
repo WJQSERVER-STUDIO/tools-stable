@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #安装依赖
-apt install util-linux
+apt install util-linux -y
 
 # 检查是否已经存在 Swap 文件
 if grep -q "swapfile" /etc/fstab; then

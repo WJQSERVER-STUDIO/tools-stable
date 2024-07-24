@@ -23,7 +23,7 @@ wget -O tools-stable-ghproxy.sh https://ghproxy-go.1888866.xyz/raw.githubusercon
 
 不提供/保证任何功能的可用性，安全性，有效性，合法性
 
-请确定你的用途符合 PRC(Mainland) USA 相关法律法规的要求和限制
+请确定你的用途符合 PRC(Mainland), Hong Kong, USA 相关法律法规的要求和限制
 
 请确定你的用途符合 你当地和运行环境/设备的 相关法律法规的要求和限制
 

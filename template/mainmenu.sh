@@ -2,14 +2,6 @@
 # By WJQSERVER-STUDIO_WJQSERVER
 #https://github.com/WJQSERVER/tools-stable
 
-mikublue="\033[38;2;57;197;187m"
-yellow='\033[33m'
-white='\033[0m'
-green='\033[0;32m'
-blue='\033[0;34m'
-red='\033[31m'
-gray='\e[37m'
-
 clear
 
 # 显示免责声明
@@ -25,7 +17,21 @@ echo -e "${yellow}==============================================================
 source "repo_url.conf"
 sleep 1
 
+mikublue="\033[38;2;57;197;187m"
+yellow='\033[33m'
+white='\033[0m'
+green='\033[0;32m'
+blue='\033[0;34m'
+red='\033[31m'
+gray='\e[37m'
+
 #彩色
+mikublue(){
+    echo -e "\033[38;2;57;197;187m\033[01m$1\033[0m"
+}
+white(){
+    echo -e "\033[0m\033[01m$1\033[0m"
+}
 red(){
     echo -e "\033[31m\033[01m$1\033[0m"
 }
@@ -38,9 +44,11 @@ yellow(){
 blue(){
     echo -e "\033[34m\033[01m$1\033[0m"
 }
-
-mikublue(){
-    echo -e "\033[38;2;57;197;187m$\033[0m"
+gray(){
+    echo -e "\e[37m\033[01m$1\033[0m"
+}
+option(){
+    echo -e "\033[32m\033[01m ${1}. \033[38;2;57;197;187m${2}\033[0m"
 }
 
 #
@@ -79,22 +87,16 @@ function back(){
 #主菜单
 function start_menu(){
     clear
-    yellow " WJQserver Studio 工具箱 Stable"
-    green " WJQserver Studio tools-stable" 
-    yellow " FROM: https://github.com/WJQSERVER/tools-stable "
-    green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
-    yellow " =================================================="
-    green " 1. " 
-    green " 2. "
-    green " 3. "
-    green " 4. " 
-    green " 5. "
-    green " 6. "
-    green " 7. "
-    yellow " =================================================="
-    green " 0. 返回主脚本"
+    red " WJQserver Studio Linux工具箱"
+    yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
+    green " =================================================="
+    option 1 "" 
+    option 2 ""
+    option 3 ""
+    green " =================================================="
+    option 0 "退出脚本"
     echo
-    read -p "请输入数字:" menuNumberInput
+    read -p " 请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
            #

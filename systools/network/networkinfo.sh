@@ -25,6 +25,7 @@ duplex=$(ethtool $interface | awk '/Duplex:/ {print $2}')
 public_ipv4=$(curl 4.ipw.cn )
 public_ipv6=$(curl 6.ipw.cn )
 
+clear
 # 输出结果
 echo "本地网络信息："
 echo -e "${yellow}==================================================${white}"

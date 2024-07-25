@@ -74,10 +74,9 @@ function back(){
 #主菜单
 function start_menu(){
     clear
-    yellow " WJQserver Studio的快捷工具箱 BETA版 "
-    green " WJQserver Studio tools BETA" 
-    yellow " FROM: https://github.com/WJQSERVER/tools-dev "
-    green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
+    yellow " WJQserver Studio的快捷工具箱 Stable版 "
+    green " WJQserver Studio tools Stable" 
+    yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
     yellow " =================================================="
     green " 1. Docker一键安装&更新" 
     yellow " =================================================="

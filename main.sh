@@ -11,7 +11,21 @@
 # 导入配置文件
 source "repo_url.conf"
 
+mikublue="\033[38;2;57;197;187m"
+yellow='\033[33m'
+white='\033[0m'
+green='\033[0;32m'
+blue='\033[0;34m'
+red='\033[31m'
+gray='\e[37m'
+
 #彩色
+mikublue(){
+    echo -e "\033[38;2;57;197;187m\033[01m$1\033[0m"
+}
+white(){
+    echo -e "\033[0m\033[01m$1\033[0m"
+}
 red(){
     echo -e "\033[31m\033[01m$1\033[0m"
 }
@@ -23,6 +37,12 @@ yellow(){
 }
 blue(){
     echo -e "\033[34m\033[01m$1\033[0m"
+}
+gray(){
+    echo -e "\e[37m\033[01m$1\033[0m"
+}
+option(){
+    echo -e "\033[32m\033[01m ${1}. \033[38;2;57;197;187m${2}\033[0m"
 }
 
 #系统信息
@@ -78,49 +98,47 @@ function proxy(){
 #主菜单
 function start_menu(){
     clear
-    yellow " WJQserver Studio的快捷工具箱"
-    green " WJQserver Studio tools" 
-    yellow " FROM: https://github.com/WJQSERVER/tools-dev "
-    green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
-    yellow " =================================================="
-    green " 1. 系统信息查看" 
-    green " 2. Docker管理"
-    green " 3. 系统工具"
-    green " 4. 面板部署" 
-    green " 5. 项目部署"
-    green " 6. 测试工具"
-    green " 7. 网站部署"
-    green " 8. 环境部署"
-    yellow " =================================================="
-    green " 9. 更多脚本"
-    yellow " =================================================="
-    green " 10. 代理部署"
-    yellow " =================================================="
-    green " 0. 退出脚本"
+    red " WJQserver Studio Linux工具箱"
+    yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
+    green " =================================================="
+    option 1 "系统信息查看" 
+    option 2 "Docker管理"
+    option 3 "系统工具"
+    option 4 "面板部署" 
+    option 5 "项目部署"
+    option 6 "测试工具"
+    option 7 "网站部署"
+    option 8 "环境部署"
+    green " =================================================="
+    option 9 "更多脚本"
+    green " =================================================="
+    option 10 "代理部署"
+    green " =================================================="
+    option 0 "退出脚本"
     echo
-    read -p "请输入数字:" menuNumberInput
+    read -p " 请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
            sysinfo
-	    ;;
+        ;;
         2 )
-	       docker-manager
+           docker-manager
         ;;
-	    3 )
+        3 )
            systools
-	    ;;
+        ;;
         4 )
-	       panel
+           panel
         ;;
-	    5 )
+        5 )
            program
-	    ;;
-        6 )
-	       test-tool
         ;;
-	    7 )
+        6 )
+           test-tool
+        ;;
+        7 )
            web
-	    ;;
+        ;;
         8 )
            environment
         ;;

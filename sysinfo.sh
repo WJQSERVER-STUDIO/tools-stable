@@ -23,12 +23,25 @@ linux_version=$(uname -r)
 
 # 检测虚拟化架构
 detect_virtualization_architecture() {
-    if [[ -f "/proc/1/environ" ]]; then
-        if grep -q "QEMU_VIRTUALIZATION" /proc/1/environ; then
-            virtualization_architecture="KVM"
+    if [[ -f "/proc/cpuinfo" ]]; then
+        if grep -q "hypervisor" /proc/cpuinfo; then
+            virtualization_architecture="KVM/VMware/VirtualBox"
+        elif [[ -f "/sys/hypervisor/type" ]]; then
+            hypervisor_type=$(cat /sys/hypervisor/type)
+            case "$hypervisor_type" in
+                "kvm") virtualization_architecture="KVM" ;;
+                "xen") virtualization_architecture="Xen" ;;
+                "microsoft") virtualization_architecture="Hyper-V" ;;
+                "qemu") virtualization_architecture="QEMU" ;;
+                *) virtualization_architecture="未知虛擬化" ;;
+            esac
         elif grep -q "container=lxc" /proc/1/environ; then
-            virtualization_architecture="LXC"
-        elif grep -q "container=lxc" /proc/1/environ && [[ -f "/proc/vz/veinfo" ]]; then
+            if [[ -f "/proc/vz/veinfo" ]]; then
+                virtualization_architecture="OpenVZ"
+            else
+                virtualization_architecture="LXC"
+            fi
+        elif [[ -f "/proc/vz/veinfo" ]]; then
             virtualization_architecture="OpenVZ"
         else
             virtualization_architecture="物理机/无法识别"
@@ -37,8 +50,6 @@ detect_virtualization_architecture() {
         virtualization_architecture="未知"
     fi
 }
-
-detect_virtualization_architecture
 
 # 获取CPU架构
 cpu_arch=$(uname -m)

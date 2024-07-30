@@ -51,6 +51,8 @@ detect_virtualization_architecture() {
     fi
 }
 
+detect_virtualization_architecture
+
 # 获取CPU架构
 cpu_arch=$(uname -m)
 

@@ -17,7 +17,7 @@ cat > docker-compose.yml <<EOF
 version: "2"
 services:
   gitea:
-    image: gitea/gitea:1.21.7-rootless
+    image: gitea/gitea:latest-rootless
     restart: always
     volumes:
       - ./data:/var/lib/gitea

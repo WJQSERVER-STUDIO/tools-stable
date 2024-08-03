@@ -4,15 +4,24 @@
 
 clear
 
-# 显示免责声明
-echo "免责声明：请阅读并同意以下条款才能继续使用本程序。"
-echo "本程序仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
-echo "使用本程序所造成的任何损失或损害，作者不承担任何责任。"
-
 # 导入配置文件
 source "repo_url.conf"
 
+mikublue="\033[38;2;57;197;187m"
+yellow='\033[33m'
+white='\033[0m'
+green='\033[0;32m'
+blue='\033[0;34m'
+red='\033[31m'
+gray='\e[37m'
+
 #彩色
+mikublue(){
+    echo -e "\033[38;2;57;197;187m\033[01m$1\033[0m"
+}
+white(){
+    echo -e "\033[0m\033[01m$1\033[0m"
+}
 red(){
     echo -e "\033[31m\033[01m$1\033[0m"
 }
@@ -24,6 +33,12 @@ yellow(){
 }
 blue(){
     echo -e "\033[34m\033[01m$1\033[0m"
+}
+gray(){
+    echo -e "\e[37m\033[01m$1\033[0m"
+}
+option(){
+    echo -e "\033[32m\033[01m ${1}. \033[38;2;57;197;187m${2}\033[0m"
 }
 
 #Docker一键安装&更新
@@ -74,24 +89,22 @@ function back(){
 #主菜单
 function start_menu(){
     clear
-    yellow " WJQserver Studio的快捷工具箱 Stable版 "
-    green " WJQserver Studio tools Stable" 
+    red " WJQserver Studio Linux工具箱"
     yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
-    yellow " =================================================="
-    green " 1. Docker一键安装&更新" 
-    yellow " =================================================="
-    green " 2. 查看Docker状态"
-    yellow " =================================================="
-    green " 3. Docker容器管理"
-    green " 4. Docker镜像管理" 
-    green " 5. Docker网络管理"
-    green " 6. Docker卷管理"
-    yellow " =================================================="
-    green " 7. 清理未使用Docker资源"
-    yellow " =================================================="
-    green " 8. Docker一键卸载"
-    yellow " =================================================="
-    green " 0. 返回主界面"
+    green " =================================================="
+    option 1 "Docker一键安装&更新"
+    option 2 "查看Docker状态"
+    green " =================================================="
+    option 3 "Docker容器管理"
+    option 4 "Docker镜像管理"
+    option 5 "Docker网络管理"
+    option 6 "Docker卷管理"
+    green " =================================================="
+    option 7 "清理未使用Docker资源"
+    green " =================================================="
+    option 8 "Docker一键卸载"
+    green " =================================================="
+    option 0 "退出脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in

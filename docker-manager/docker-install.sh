@@ -1,6 +1,21 @@
-#!/bin/bash
+#! /bin/bash
+# By WJQSERVER-STUDIO_WJQSERVER
+#https://github.com/WJQSERVER/tools-dev
 
-echo "开始安装Docker"
+clear
+
+# 导入配置文件
+source "repo_url.conf"
+
+mikublue="\033[38;2;57;197;187m"
+yellow='\033[33m'
+white='\033[0m'
+green='\033[0;32m'
+blue='\033[0;34m'
+red='\033[31m'
+gray='\e[37m'
+
+echo -e "[${yellow}RUN${white}] $mikublue 開始安裝Docker" $white
 
 # 安装 Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -41,15 +56,12 @@ docker network create --subnet=172.20.0.0/16 --ipv6 --subnet=fd00:a380:a321:c0::
 #重启Docker
 systemctl restart docker
 
+echo -e "[${green}OK${white}] $green Docker 安装成功" $white
+
 #回到root目录
 cd /root
 
-# 导入配置文件
-source "repo_url.conf"
-
-#等待1s
 sleep 1
-
 #返回菜单/退出脚本
 read -p "是否返回菜单?: [Y/n]" choice
 

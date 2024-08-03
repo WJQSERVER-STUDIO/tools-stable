@@ -2,17 +2,6 @@
 # By WJQSERVER-STUDIO_WJQSERVER
 #https://github.com/WJQSERVER/tools-stable
 
-clear
-
-# 显示免责声明
-echo -e "${red}免责声明：${mikublue}请阅读并同意以下条款才能继续使用本脚本。"
-echo -e "${yellow}===================================================================="
-echo -e "${mikublue}本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
-echo -e "${mikublue}使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
-echo -e "${mikublue}不提供/保证任何功能的可用性，安全性，有效性，合法性"
-echo -e "${mikublue}当前版本为${white}  [${yellow} V.0.9 ${white}]  ${white}"
-echo -e "${yellow}===================================================================="
-
 # 导入配置文件
 source "repo_url.conf"
 sleep 1
@@ -50,6 +39,17 @@ gray(){
 option(){
     echo -e "\033[32m\033[01m ${1}. \033[38;2;57;197;187m${2}\033[0m"
 }
+
+clear
+
+# 显示免责声明
+echo -e "${red}免责声明：${mikublue}请阅读并同意以下条款才能继续使用本脚本。"
+echo -e "${yellow}===================================================================="
+echo -e "${mikublue}本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
+echo -e "${mikublue}使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
+echo -e "${mikublue}不提供/保证任何功能的可用性，安全性，有效性，合法性"
+echo -e "${mikublue}当前版本为${white}  [${yellow} V.0.9 ${white}]  ${white}"
+echo -e "${yellow}===================================================================="
 
 #修改主机名
 function change_hostname(){

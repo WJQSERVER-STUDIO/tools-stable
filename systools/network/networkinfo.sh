@@ -27,8 +27,8 @@ public_ipv6=$(curl 6.ipw.cn )
 
 clear
 # 输出结果
-echo "本地网络信息："
-echo -e "${yellow}==================================================${white}"
+echo -e "${yellow}本地网络信息：${white}"
+echo -e "${green}==================================================${white}"
 echo -e "${mikublue}接口名称:${white} $interface"
 echo -e "${mikublue}IPv4地址:${white} $local_ipv4"
 echo -e "${mikublue}IPv6地址:${white}"
@@ -43,7 +43,7 @@ echo -e "${mikublue}网卡型号:${white} $model"
 echo -e "${mikublue}网卡速率:${white} $speed"
 echo -e "${mikublue}双工状态:${white} $duplex"
 echo -e "${mikublue}链路状态:${white} $(ip link show dev $interface | awk '/state/ {print $9}')"
-echo -e "${yellow}==================================================${white}"
+echo -e "${green}==================================================${white}"
 
 #回到root目录
 cd /root

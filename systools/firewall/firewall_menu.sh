@@ -45,15 +45,13 @@ function back(){
 #主菜单
 function start_menu(){
     clear
-    yellow " WJQserver Studio 工具箱 Stable"
-    green " WJQserver Studio tools-stable" 
-    yellow " FROM: https://github.com/WJQSERVER/tools-stable "
-    green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
-    yellow " =================================================="
-    green " 1. 安装UFW防火墙,便捷管理防火墙规则" 
-    green " 2. 安装Fail2ban,防止SSH爆破"
-    yellow " =================================================="
-    green " 0. 返回主脚本"
+    red " WJQserver Studio Linux工具箱"
+    yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
+    green " =================================================="
+    option 1 "UFW" 
+    option 2 "Fail2ban"
+    green " =================================================="
+    option 0 " 返回主脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in

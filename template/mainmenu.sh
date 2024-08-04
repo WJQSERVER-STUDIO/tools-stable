@@ -4,7 +4,6 @@
 
 # 导入配置文件
 source "repo_url.conf"
-sleep 1
 
 mikublue="\033[38;2;57;197;187m"
 yellow='\033[33m'
@@ -50,6 +49,7 @@ echo -e "${mikublue}使用本脚本所造成的任何损失或损害，作者不
 echo -e "${mikublue}不提供/保证任何功能的可用性，安全性，有效性，合法性"
 echo -e "${mikublue}当前版本为${white}  [${yellow} V.0.9 ${white}]  ${white}"
 echo -e "${yellow}===================================================================="
+sleep 1
 
 #
 function (){

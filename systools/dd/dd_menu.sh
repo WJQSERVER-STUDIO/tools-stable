@@ -55,7 +55,7 @@ function debain12(){
     echo "即将安装Debian-12系统,原系统数据将被清空"
     sleep 1
     read -p "输入新系统密码:" PASSWORD
-    wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -debian 12 -pwd $PASSWORD
+    wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -debian 12 -pwd $PASSWORD --bbr
 }
 
 function debian11(){

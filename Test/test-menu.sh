@@ -1,6 +1,9 @@
 #! /bin/bash
-# By WJQSERVER-STUDIO
+# By WJQSERVER-STUDIO_WJQSERVER
 #https://github.com/WJQSERVER/tools-stable
+
+# 导入配置文件
+source "repo_url.conf"
 
 mikublue="\033[38;2;57;197;187m"
 yellow='\033[33m'
@@ -10,24 +13,13 @@ blue='\033[0;34m'
 red='\033[31m'
 gray='\e[37m'
 
-clear
-
-# 显示免责声明
-echo -e "${red}免责声明：请阅读并同意以下条款才能继续使用本脚本。"
-echo -e "${yellow}本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
-echo -e "${yellow}使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
-echo -e "${yellow}不提供/保证任何功能的可用性，安全性，有效性，合法性${white}"
-echo -e "${yellow}第三方脚本内出现的信息与本团队无关，脚本内的广告并非本团队投放，请注意辨别${white}"
-
-# 导入配置文件
-source "repo_url.conf"
-
-sleep 1
-
-# 安装下载工具
-apt install wget curl -y
-
 #彩色
+mikublue(){
+    echo -e "\033[38;2;57;197;187m\033[01m$1\033[0m"
+}
+white(){
+    echo -e "\033[0m\033[01m$1\033[0m"
+}
 red(){
     echo -e "\033[31m\033[01m$1\033[0m"
 }
@@ -40,6 +32,24 @@ yellow(){
 blue(){
     echo -e "\033[34m\033[01m$1\033[0m"
 }
+gray(){
+    echo -e "\e[37m\033[01m$1\033[0m"
+}
+option(){
+    echo -e "\033[32m\033[01m ${1}. \033[38;2;57;197;187m${2}\033[0m"
+}
+
+clear
+
+# 显示免责声明
+echo -e "${red}免责声明：${mikublue}请阅读并同意以下条款才能继续使用本脚本。"
+echo -e "${yellow}===================================================================="
+echo -e "${mikublue}本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
+echo -e "${mikublue}使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
+echo -e "${mikublue}不提供/保证任何功能的可用性，安全性，有效性，合法性"
+echo -e "${mikublue}当前版本为${white}  [${yellow} V.0.9 ${white}]  ${white}"
+echo -e "${yellow}===================================================================="
+sleep 1
 
 #ChatGPT解锁
 function chatgpt(){
@@ -255,30 +265,28 @@ clear
 #主菜单
 function start_menu(){
     clear
-    yellow " WJQserver Studio工具箱 "
-    green " WJQserver Studio tools " 
+    red " WJQserver Studio Linux工具箱"
     yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
-    green " USE:  wget -O tools-stable.sh ${repo_url}tools-stable.sh && chmod +x tools-stable.sh && clear && ./tools-stable.sh "
-    yellow " =================================================="
-    green " 1. ChatGPT解锁" 
-    green " 2. Region流媒体解锁测试"
-    green " 3. Yeahwu流媒体解锁检测"
-    yellow " =================================================="    
-    green " 4. Backtrace三网回程线路测试" 
-    green " 5. MTR_trace三网回程线路测试"
-    green " 6. Besttrace三网回程延迟路由测试"
-    yellow " =================================================="
-    green " 7. Superspeed三网测速"
-    green " 8. Hyperspeed三网测速"
-    green " 9. Speedtest全球测速 by i-abc"
-    yellow " =================================================="
-    green " 10. Lemonbench综合测试"
-    green " 11.Yabs性能带宽测试"
-    green " 12.bench性能测试"
-    green " 13.spiritysdx融合怪测评"
-    green " 14.IP质量检测"
-    yellow " =================================================="
-    green " 0. 返回主脚本"
+    green " =================================================="
+    option 1 "ChatGPT解锁" 
+    option 2 "Region流媒体解锁测试"
+    option 3 "Yeahwu流媒体解锁检测"
+    green " ==================================================" 
+    option 4 "Backtrace三网回程线路测试"
+    option 5 "MTR_trace三网回程线路测试"
+    option 6 "Besttrace三网回程延迟路由测试"
+    green " =================================================="
+    option 7 "Superspeed三网测速"
+    option 8 "Hyperspeed三网测速"
+    option 9 "Speedtest全球测速 by i-abc"
+    green " =================================================="
+    option 10 "Lemonbench综合测试"
+    option 11 "Yabs性能带宽测试"
+    option 12 "bench性能测试"
+    option 13 "spiritysdx融合怪测评"
+    option 14 "IP质量检测"
+    green " =================================================="
+    option 0 "返回主脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in

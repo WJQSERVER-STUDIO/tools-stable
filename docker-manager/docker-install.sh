@@ -56,7 +56,7 @@ docker network create --subnet=172.20.0.0/16 --ipv6 --subnet=fd00:a380:a321:c0::
 #重启Docker
 systemctl restart docker
 
-echo -e "[${green}OK${white}] $green Docker 安装成功" $white
+echo -e "[${green}OK${white}] $mikublue Docker 安装成功" $white
 
 #回到root目录
 cd /root

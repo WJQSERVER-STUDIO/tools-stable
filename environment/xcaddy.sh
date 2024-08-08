@@ -21,7 +21,7 @@ echo -e "${green}>${white} $mikublue 拉取GO安裝包" $white
 wget https://go.dev/dl/go1.22.5.linux-amd64.tar.gz
 echo -e "${green}>${white} $mikublue 清理GO相關目錄" $white
 echo -e "${green}>${white} $mikublue 解壓GO安裝包" $white
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.5.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.6.linux-amd64.tar.gz
 echo -e "${green}>${white} $mikublue 添加GO環境變量" $white
 echo "export PATH=\$PATH:/usr/local/go/bin" >> /etc/profile
 echo -e "${green}>${white} $mikublue 導入GO變量" $white

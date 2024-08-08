@@ -7,11 +7,11 @@ WJQserver-Studio推出的快捷Linux工具箱-稳定版本
 wget -O tools-stable.sh https://raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/tools-stable.sh && chmod +x tools-stable.sh && clear && ./tools-stable.sh
 ```
 
-- V.0.9 Mirror-US(尚未迁移)
+<!-- - V.0.9 Mirror-US(尚未迁移)
 
 ```
 wget -O tools-stable-mirror-us.sh https://tools.1888866.xyz/tools-stable-mirror-us.sh && chmod +x tools-stable-mirror-us.sh && clear && ./tools-stable-mirror-us.sh
-```
+``` -->
 
 - V.0.9 Github-Proxy
 

@@ -76,6 +76,10 @@ function check_port_usage(){
     wget -O check_port_usage.sh ${repo_url}systools/network/check_port_usage.sh && chmod +x check_port_usage.sh && ./check_port_usage.sh
 }
 
+function bbr-tcpx-flow(){
+    wget -O bbr-tcpx-flow.sh ${repo_url}systools/network/bbr-tcpx-flow.sh && chmod +x bbr-tcpx-flow.sh && ./bbr-tcpx-flow.sh
+}
+
 #返回主脚本
 function back(){
     wget -O systools-menu.sh ${repo_url}systools/systools-menu.sh && chmod +x systools-menu.sh && ./systools-menu.sh
@@ -92,6 +96,7 @@ function start_menu(){
     option 3 "BBR管理面板"
     option 4 "更換DNS"
     option 5 "檢測端口占用"
+    option 6 "BBR参数调优(Debian10+可用)"
     green " =================================================="
     option 0 "返回主脚本"
     echo
@@ -99,19 +104,22 @@ function start_menu(){
     case "$menuNumberInput" in
         1 )
            networkinfo
-	    ;;
+        ;;
         2 )
-	       ipv_switch
+           ipv_switch
         ;;
-	    3 )
+        3 )
            bbr
-	    ;;
-        4 )
-	       change_dns
         ;;
-	    5 )
+        4 )
+           change_dns
+        ;;
+        5 )
            check_port_usage
-	    ;;  
+        ;;
+        6 )
+           bbr-tcpx-flow
+        ;;
         0 )
            back
         ;;

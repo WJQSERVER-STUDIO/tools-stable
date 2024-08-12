@@ -2,6 +2,9 @@
 # By WJQSERVER-STUDIO_WJQSERVER
 #https://github.com/WJQSERVER/tools-stable
 
+# 导入配置文件
+source "repo_url.conf"
+
 mikublue="\033[38;2;57;197;187m"
 yellow='\033[33m'
 white='\033[0m'
@@ -10,20 +13,13 @@ blue='\033[0;34m'
 red='\033[31m'
 gray='\e[37m'
 
-clear
-
-# 显示免责声明
-echo -e "${red}免责声明：请阅读并同意以下条款才能继续使用本脚本。"
-echo -e "${yellow}本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
-echo -e "${yellow}使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
-echo -e "${yellow}不提供/保证任何功能的可用性，安全性，有效性，合法性${white}"
-
-sleep 1
-
-# 导入配置文件
-source "repo_url.conf"
-
 #彩色
+mikublue(){
+    echo -e "\033[38;2;57;197;187m\033[01m$1\033[0m"
+}
+white(){
+    echo -e "\033[0m\033[01m$1\033[0m"
+}
 red(){
     echo -e "\033[31m\033[01m$1\033[0m"
 }
@@ -36,6 +32,24 @@ yellow(){
 blue(){
     echo -e "\033[34m\033[01m$1\033[0m"
 }
+gray(){
+    echo -e "\e[37m\033[01m$1\033[0m"
+}
+option(){
+    echo -e "\033[32m\033[01m ${1}. \033[38;2;57;197;187m${2}\033[0m"
+}
+
+clear
+
+# 显示免责声明
+echo -e "${red}免责声明：${mikublue}请阅读并同意以下条款才能继续使用本脚本。"
+echo -e "${yellow}===================================================================="
+echo -e "${mikublue}本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
+echo -e "${mikublue}使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
+echo -e "${mikublue}不提供/保证任何功能的可用性，安全性，有效性，合法性"
+echo -e "${mikublue}当前版本为${white}  [${yellow} V.0.9 ${white}]  ${white}"
+echo -e "${yellow}===================================================================="
+sleep 1
 
 #BBR管理面板
 function bbr-manager(){
@@ -99,23 +113,21 @@ function back(){
 #主菜单
 function start_menu(){
     clear
-    yellow " WJQserver Studio的快捷工具箱 BETA版 "
-    green " WJQserver Studio tools BETA" 
-    yellow " FROM: https://github.com/WJQSERVER/tools-dev "
-    green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
-    yellow " =================================================="
-    green " 1. BBR管理面板" 
-    yellow " =================================================="
-    green " 2. WARP"
-    green " 3. WARP-GO"
-    yellow " =================================================="
-    green " 4. X-UI" 
-    green " 5. X-UI_FranzKafkaYu分支"
-    green " 7. 3X-UI"
-    green " 8. 3X-UI_中文優化版(分支)"
-    green " 9. ArgoX"
-    yellow " =================================================="
-    green " 0. 返回主脚本"
+    red " WJQserver Studio Linux工具箱"
+    yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
+    green " =================================================="
+    option 1 "BBR管理面板" 
+    green " =================================================="
+    option 2 "WARP"
+    option 3 "WARP-GO"
+    green " =================================================="
+    option 4 "X-UI"
+    option 5 "X-UI_FranzKafkaYu分支"
+    option 6 "3X-UI"
+    option 7 "3X-UI_中文優化版(分支)"
+    option 8 "ArgoX"
+    green " =================================================="
+    option 9 "返回主菜单"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
@@ -135,15 +147,12 @@ function start_menu(){
            x-ui_f
         ;;
         6 )
-           x-ui_yg
+           3x-ui
         ;;
         7 )
-           3x-ui
+           3x-ui-cn
         ;;   
         8 )
-           3x-ui-cn
-        ;;
-        9 )
            argox
         ;;
         0 )

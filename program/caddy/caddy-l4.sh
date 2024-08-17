@@ -51,16 +51,24 @@ echo -e "${mikublue}当前版本为${white}  [${yellow} V.0.9 ${white}]  ${white
 echo -e "${yellow}===================================================================="
 sleep 1
 
-echo 开始安装Caddy2
+echo -e "[${yellow}RUN${white}] $mikublue 開始安裝Caddy" $white
 
-mkdir -p /root/data/caddy >> /root/data/log/aek971.log 2>&1
-mkdir -p /root/data/caddy/config >> /root/data/log/aek971.log 2>&1
-wget -O /root/data/caddy/caddy.tar.gz https://raw.githubusercontent.com/WJQSERVER/tools-stable/main/program/caddy/caddy.tar.gz >> /root/data/log/aek971.log 2>&1
-tar -xzvf /root/data/caddy/caddy.tar.gz -C /root/data/caddy >> /root/data/log/aek971.log 2>&1
-rm /root/data/caddy/caddy.tar.gz >> /root/data/log/aek971.log 2>&1
-chmod +x /root/data/caddy/caddy >> /root/data/log/aek971.log 2>&1
-chown root:root /root/data/caddy/caddy >> /root/data/log/aek971.log 2>&1
- 
+echo -e "${green}>${white} $mikublue 創建安裝目錄" $white
+mkdir -p /root/data/caddy
+mkdir -p /root/data/caddy/config
+echo -e "${green}>${white} $mikublue 下載主程序" $white
+VERSION=$(curl -s https://raw.githubusercontent.com/WJQSERVER-STUDIO/caddy/main/DEV-VERSION)
+wget -O /root/data/caddy/caddy.tar.gz https://github.com/WJQSERVER/caddy/releases/download/$VERSION/caddy-linux-amd64-pages-l4.tar.gz
+echo -e "${green}>${white} $mikublue 解壓程序及其資源" $white
+tar -xzvf /root/data/caddy/caddy.tar.gz -C /root/data/caddy
+echo -e "${green}>${white} $mikublue 清理安裝資源" $white
+rm /root/data/caddy/caddy.tar.gz
+echo -e "${green}>${white} $mikublue 設置程序運行權限" $white
+chmod +x /root/data/caddy/caddy
+chown root:root /root/data/caddy/caddy
+
+echo -e "${green}>${white} $mikublue 創建SERVICE文件" $white
+
 cat <<EOF > /etc/systemd/system/caddy.service
 [Unit]
 Description=Caddy
@@ -86,37 +94,11 @@ WantedBy=multi-user.target
 
 EOF
 
-wget -O /root/data/caddy/Caddyfile https://raw.githubusercontent.com/WJQSERVER/tools-stable/main/program/caddy/caddyfile >> /root/data/log/aek971.log 2>&1
+echo -e "${green}>${white} $mikublue 拉取Caddyfile配置" $white
+wget -O /root/data/caddy/Caddyfile https://raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/program/caddy/caddyfile
 
-#./caddy add-package github.com/caddyserver/cache-handler
-#./caddy add-package github.com/ueffel/caddy-brotli
-#./caddy add-package github.com/caddyserver/transform-encoder
-#./caddy add-package github.com/RussellLuo/caddy-ext/ratelimit
-#./caddy add-package github.com/caddy-dns/cloudflare
-chown root:root /root/data/caddy/Caddyfile >> /root/data/log/aek971.log 2>&1
-systemctl daemon-reload >> /root/data/log/aek971.log 2>&1
-systemctl enable caddy.service >> /root/data/log/aek971.log 2>&1
-systemctl start caddy.service >> /root/data/log/aek971.log 2>&1
-echo -e "[${green}OK${white}] $mikublue Caddy2安装完成" $white
-echo "服务已成功启动！"
-echo "默认采用Caddyfile配置"
-echo "/root/data/caddy/Caddyfile"
-echo "已在<服务器IP>:80上部署了演示页"
-
-#回到root目录
-cd /root
-
-# 导入配置文件
-source "repo_url.conf"
-
-#等待1s
-sleep 1
-
-#返回菜单/退出脚本
-read -p "是否返回菜单?: [Y/n]" choice
-
-if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
-    wget -O program-menu.sh ${repo_url}program/program-menu.sh && chmod +x program-menu.sh && ./program-menu.sh
-else
-    echo "脚本结束"
-fi
+echo -e "${green}>${white} $mikublue 啟動程序" $white
+systemctl daemon-reload
+systemctl enable caddy.service
+systemctl start caddy.service
+echo -e "[${green}OK${white}] $mikublue caddy安装完成" $white

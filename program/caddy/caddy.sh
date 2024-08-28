@@ -96,6 +96,7 @@ EOF
 
 echo -e "${green}>${white} $mikublue 拉取Caddyfile配置" $white
 wget -O /root/data/caddy/Caddyfile https://raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/program/caddy/caddyfile
+wget -O /root/data/caddy/config/80 https://raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/program/caddy/80
 
 echo -e "${green}>${white} $mikublue 啟動程序" $white
 systemctl daemon-reload

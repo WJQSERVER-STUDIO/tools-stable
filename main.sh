@@ -80,8 +80,13 @@ function environment(){
 }
 
 #更多脚本
-function bash(){
-    wget -O bashmenu.sh ${repo_url}bash/bashmenu.sh && chmod +x bashmenu.sh && ./bashmenu.sh    
+#function bash(){
+#    wget -O bashmenu.sh ${repo_url}bash/bashmenu.sh && chmod +x bashmenu.sh && ./bashmenu.sh    
+#}
+
+#PVE管理
+function pve(){
+    wget -O pve-menu.sh ${repo_url}pve/pve-menu.sh && chmod +x pve-menu.sh && ./pve-menu.sh
 }
 
 #代理节点管理
@@ -104,7 +109,7 @@ function start_menu(){
     option 7 "网站部署"
     option 8 "环境部署"
     green " =================================================="
-    option 9 "更多脚本"
+    option 9 "PVE管理"
     green " =================================================="
     option 10 "代理部署"
     green " =================================================="
@@ -137,7 +142,7 @@ function start_menu(){
            environment
         ;;
         9 )
-           bash
+           pve
         ;;
         10 )
            proxy

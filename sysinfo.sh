@@ -8,6 +8,9 @@ blue='\033[0;34m'
 red='\033[31m'
 gray='\e[37m'
 
+# 统计次数
+curl -s https://count.1888866.xyz/add
+
 # 获取主机名
 hostname=$(hostname)
 

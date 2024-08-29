@@ -5,6 +5,16 @@
 # 导入配置文件
 source "repo_url.conf"
 
+# 获取当前版本
+version=$(curl -s https://raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/Version)
+
+# 获取统计信息
+total=$(curl -s https://count.1888866.xyz/api/counter/total)
+today=$(curl -s https://count.1888866.xyz/api/counter/daily)
+
+# 统计次数
+curl -s https://count.1888866.xyz/add
+
 mikublue="\033[38;2;57;197;187m"
 yellow='\033[33m'
 white='\033[0m'
@@ -99,6 +109,8 @@ function start_menu(){
     clear
     red " WJQserver Studio Linux工具箱"
     yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
+    mikublue " 当前版本: ${gray}v.${version}"
+    mikublue " 脚本已运行 ${total} 次，今日运行 ${today} 次"
     green " =================================================="
     option 1 "系统信息查看" 
     option 2 "Docker管理"

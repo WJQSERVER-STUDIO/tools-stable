@@ -56,6 +56,11 @@ function pve-source(){
     wget -q -O /root/pve_source.tar.gz 'https://bbs.x86pi.cn/file/topic/2023-11-28/file/01ac88d7d2b840cb88c15cb5e19d4305b2.gz' && tar zxvf /root/pve_source.tar.gz && /root/./pve_source
 }
 
+#PVE系统工具-DEV
+function pve-source-dev(){
+    wget -q -O /root/pve_source.tar.gz 'https://bbs.x86pi.cn/file/topic/2024-01-06/file/24f723efc6ab4913b1f99c97a1d1a472b2.gz' && tar zxvf /root/pve_source.tar.gz && /root/./pve_source
+}
+
 #PVE信息补充
 function pve-info(){
     wget -O pve-info.sh ${repo_url}pve/pve-info.sh && chmod +x pve-info.sh && ./pve-info.sh
@@ -79,7 +84,8 @@ function start_menu(){
     green " =================================================="
     option 1 "通用系统工具" 
     option 2 "PVE系统工具"
-    option 3 "PVE信息补充"
+    option 3 "PVE系统工具-DEV"
+    option 4 "PVE信息补充"
     green " =================================================="
     option 0 "退出脚本"
     echo
@@ -92,8 +98,11 @@ function start_menu(){
             pve-source
         ;;
         3 )
-            pve-info
+            pve-source-dev
         ;; 
+        4 )
+            pve-info
+        ;;
         0 )
             back
         ;;

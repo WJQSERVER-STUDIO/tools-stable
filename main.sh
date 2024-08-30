@@ -96,7 +96,7 @@ function environment(){
 
 #PVE管理
 function pve(){
-    wget -O pve-menu.sh ${repo_url}pve/pve-menu.sh && chmod +x pve-menu.sh && ./pve-menu.sh
+    wget -O pve_menu.sh ${repo_url}pve/pve_menu.sh && chmod +x pve_menu.sh && ./pve_menu.sh
 }
 
 #代理节点管理

@@ -44,7 +44,7 @@ if [ "$answer" == "y" ]; then
 
   # 启用 Swap 文件
   echo "/swapfile none swap sw 0 0" | sudo tee -a /etc/fstab
-  echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf
+  echo "vm.swappiness=25" | sudo tee -a /etc/sysctl.conf
   echo "vm.vfs_cache_pressure=50" | sudo tee -a /etc/sysctl.conf
   sudo sysctl -p
 

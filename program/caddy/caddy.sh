@@ -58,7 +58,7 @@ mkdir -p /root/data/caddy
 mkdir -p /root/data/caddy/config
 echo -e "${green}>${white} $mikublue 下載主程序" $white
 VERSION=$(curl -s https://raw.githubusercontent.com/WJQSERVER-STUDIO/caddy/main/VERSION)
-wget -O /root/data/caddy/caddy.tar.gz https://github.com/WJQSERVER-STUDIO/caddy/releases/download/$VERSION/caddy-linux-amd64-pages.tar.gz
+wget -q -O /root/data/caddy/caddy.tar.gz https://github.com/WJQSERVER-STUDIO/caddy/releases/download/$VERSION/caddy-linux-amd64-pages.tar.gz
 echo -e "${green}>${white} $mikublue 解壓程序及其資源" $white
 tar -xzvf /root/data/caddy/caddy.tar.gz -C /root/data/caddy
 echo -e "${green}>${white} $mikublue 清理安裝資源" $white
@@ -95,8 +95,8 @@ WantedBy=multi-user.target
 EOF
 
 echo -e "${green}>${white} $mikublue 拉取Caddyfile配置" $white
-wget -O /root/data/caddy/Caddyfile https://raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/program/caddy/caddyfile
-wget -O /root/data/caddy/config/80 https://raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/program/caddy/80
+wget -q -O /root/data/caddy/Caddyfile https://raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/program/caddy/caddyfile
+wget -q -O /root/data/caddy/config/80 https://raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/program/caddy/80
 
 echo -e "${green}>${white} $mikublue 啟動程序" $white
 systemctl daemon-reload

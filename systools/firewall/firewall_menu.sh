@@ -72,7 +72,7 @@ function start_menu(){
     red " WJQserver Studio Linux工具箱"
     yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
     green " =================================================="
-    option 1 "UFW" 
+    option 1 "UFW && Fail2ban" 
     option 2 "Fail2ban"
     green " =================================================="
     option 0 " 返回主脚本"

@@ -22,7 +22,6 @@ if [ $? -ne 0 ]; then
     today="unknown"  
 fi
 
-
 # 统计次数
 response=$(curl -s --max-time 5 https://count.1888866.xyz/add)
 if [ $? -ne 0 ]; then
@@ -30,7 +29,6 @@ if [ $? -ne 0 ]; then
 else
     echo 
 fi
-
 
 mikublue="\033[38;2;57;197;187m"
 yellow='\033[33m'

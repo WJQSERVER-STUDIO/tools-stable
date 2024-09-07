@@ -61,6 +61,11 @@ function fail2ban(){
     wget -O fail2ban.sh ${repo_url}systools/firewall/fail2ban/fail2ban.sh && chmod +x fail2ban.sh && ./fail2ban.sh
 }
 
+#UFW IPv6
+function ufw_ipv6(){
+    wget -O ufw_ipv6.sh ${repo_url}systools/firewall/ufw_ipv6.sh && chmod +x ufw_ipv6.sh && ./ufw_ipv6.sh
+}
+
 #返回主脚本
 function back(){
     wget -O systools-menu.sh ${repo_url}systools/systools-menu.sh && chmod +x systools-menu.sh && ./systools-menu.sh
@@ -74,6 +79,7 @@ function start_menu(){
     green " =================================================="
     option 1 "UFW && Fail2ban" 
     option 2 "Fail2ban"
+    option 3 "UFW IPv6"
     green " =================================================="
     option 0 " 返回主脚本"
     echo
@@ -81,9 +87,12 @@ function start_menu(){
     case "$menuNumberInput" in
         1 )
            ufw
-	    ;;
+        ;;
         2 )
-	       fail2ban
+           fail2ban
+        ;;
+        3 )
+           ufw_ipv6
         ;;
         0 )
            back

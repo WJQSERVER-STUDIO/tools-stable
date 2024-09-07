@@ -5,15 +5,32 @@
 # 导入配置文件
 source "repo_url.conf"
 
-# 获取当前版本
-version=$(curl -s https://raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/Version)
+# 获取当前版本并设置5秒超时
+version=$(curl -s --max-time 5 ${repo_url}Version)
+if [ $? -ne 0 ]; then
+    version="unknown"  # 设置默认值或进行其他错误处理
+fi
 
-# 获取统计信息
-total=$(curl -s https://count.1888866.xyz/api/counter/total)
-today=$(curl -s https://count.1888866.xyz/api/counter/daily)
+# 获取统计信息并设置5秒超时
+total=$(curl -s --max-time 5 https://count.1888866.xyz/api/counter/total)
+if [ $? -ne 0 ]; then
+    total="unknown"  # 设置默认值或进行其他错误处理
+fi
+
+today=$(curl -s --max-time 5 https://count.1888866.xyz/api/counter/daily)
+if [ $? -ne 0 ]; then
+    today="unknown"  
+fi
+
 
 # 统计次数
-curl -s https://count.1888866.xyz/add
+response=$(curl -s --max-time 5 https://count.1888866.xyz/add)
+if [ $? -ne 0 ]; then
+    echo 
+else
+    echo 
+fi
+
 
 mikublue="\033[38;2;57;197;187m"
 yellow='\033[33m'

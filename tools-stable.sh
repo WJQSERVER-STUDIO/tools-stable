@@ -2,6 +2,9 @@
 # By WJQSERVER-STUDIO_WJQSERVER
 #https://github.com/WJQSERVER/tools-stable
 
+#Stable版
+repo_url="https://raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/"
+
 # 获取当前版本并设置5秒超时
 version=$(curl -s --max-time 5 ${repo_url}Version)
 if [ $? -ne 0 ]; then
@@ -50,9 +53,6 @@ echo -e "${yellow}==============================================================
 sleep 1
 
 conf_file="repo_url.conf"
-
-#Stable版
-repo_url="https://raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/"
 
 echo "repo_url=$repo_url" > "$conf_file"
 

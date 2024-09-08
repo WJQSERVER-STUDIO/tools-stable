@@ -1,4 +1,9 @@
-#!/bin/bash
+#! /bin/bash
+# By WJQSERVER-STUDIO_WJQSERVER
+#https://github.com/WJQSERVER/tools-stable
+
+# 导入配置文件
+source "repo_url.conf"
 
 mikublue="\033[38;2;57;197;187m"
 yellow='\033[33m'
@@ -7,9 +12,6 @@ green='\033[0;32m'
 blue='\033[0;34m'
 red='\033[31m'
 gray='\e[37m'
-
-# 统计次数
-curl -s https://count.1888866.xyz/add
 
 # 获取主机名
 hostname=$(hostname)
@@ -150,8 +152,13 @@ cd /root
 # 导入配置文件
 source "repo_url.conf"
 
-#等待1s
-sleep 3
+# 统计次数
+response=$(curl -s --max-time 5 https://count.1888866.xyz/add)
+if [ $? -ne 0 ]; then
+    echo 
+else
+    echo 
+fi
 
 #返回菜单/退出脚本
 read -p "是否返回菜单?: [Y/n]" choice

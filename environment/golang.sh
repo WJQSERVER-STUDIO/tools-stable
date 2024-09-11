@@ -10,12 +10,14 @@ blue='\033[0;34m'
 red='\033[31m'
 gray='\e[37m'
 
+version="1.23.1"
+
 echo -e "[${green}RUN${white}] $mikublue 開始安裝GO環境" $white
 echo -e "${green}>${white} $mikublue     拉取安裝包" $white
-wget -q https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
+wget -q https://go.dev/dl/go$version.linux-amd64.tar.gz
 echo -e "${green}>${white} $mikublue     清理目錄" $white
 echo -e "${green}>${white} $mikublue     解壓安裝包" $white
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go$version.linux-amd64.tar.gz
 echo -e "${green}>${white} $mikublue     添加環境變量" $white
 echo "export PATH=\$PATH:/usr/local/go/bin" >> /etc/profile
 echo -e "${green}>${white} $mikublue     導入變量" $white

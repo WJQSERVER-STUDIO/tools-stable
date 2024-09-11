@@ -122,9 +122,9 @@ function webssh(){
 }
 
 #中微子代理
-function neutrino_proxy(){
-    wget -O neutrino-proxy-menu.sh ${repo_url}program/neutrino-proxy/neutrino-proxy-menu.sh && chmod +x neutrino-proxy-menu.sh && ./neutrino-proxy-menu.sh
-}
+#function neutrino_proxy(){
+#    wget -O neutrino-proxy-menu.sh ${repo_url}program/neutrino-proxy/neutrino-proxy-menu.sh && chmod +x neutrino-proxy-menu.sh && ./neutrino-proxy-menu.sh
+#}
 
 #青龙代挂面板
 function qinglong_panel(){
@@ -170,7 +170,7 @@ function start_menu(){
     green " 14.IT-Tools在线IT工具箱"
     green " 15.SearXNG搜索引擎"
     green " 16.WebSSH网页SSH"
-    green " 17.中微子代理"
+    green " 17.中微子代理 (不可用)"
     green " 18.青龙代挂面板" 
     green " 19.Caddy"
     green " 20.聊天机器人"

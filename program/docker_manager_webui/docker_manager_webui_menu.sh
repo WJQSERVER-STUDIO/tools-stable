@@ -55,7 +55,7 @@ function start_menu(){
     yellow " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     yellow " =================================================="
-    green " 1. Portainer" 
+    green " 1. Portainer (6053537/portainer-ce) 已停止更新" 
     green " 2. Dockge"
     green " 3. Docker-UI"
     yellow " =================================================="

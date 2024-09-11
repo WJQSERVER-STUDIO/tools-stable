@@ -1,4 +1,6 @@
 #!/bin/bash
+# 6053537/portainer-ce已停止更新,感谢6053537一直以来的汉化
+# 感谢6053537对Portainer的汉化及改进
 
 # 创建目录
 mkdir -p /root/data/docker_data/portainer

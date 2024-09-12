@@ -5,13 +5,13 @@
 #Stable版
 repo_url="https://raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/"
 
-# 获取当前版本并设置5秒超时
+# 获取当前版本并设置3秒超时
 version=$(curl -s --max-time 3 ${repo_url}Version)
 if [ $? -ne 0 ]; then
     version="unknown"  # 设置默认值或进行其他错误处理
 fi
 
-# 获取统计信息并设置5秒超时
+# 获取统计信息并设置3秒超时
 total=$(curl -s --max-time 3 https://count.1888866.xyz/api/counter/total)
 if [ $? -ne 0 ]; then
     total="unknown"  # 设置默认值或进行其他错误处理

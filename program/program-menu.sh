@@ -30,13 +30,13 @@ else
     echo 
 fi
 
-mikublue="\033[38;2;57;197;187m"
-yellow='\033[33m'
-white='\033[0m'
-green='\033[0;32m'
-blue='\033[0;34m'
-red='\033[31m'
-gray='\e[37m'
+mikublue="\033[38;2;57;197;187m\033[01m"
+yellow='\033[33m\033[01m'
+white='\033[0m\033[01m'
+green='\033[0;32m\033[01m'
+blue='\033[0;34m\033[01m'
+red='\033[31m\033[01m'
+gray='\e[37m\033[01m'
 
 #彩色
 mikublue(){

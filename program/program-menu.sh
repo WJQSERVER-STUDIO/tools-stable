@@ -120,9 +120,9 @@ function start_menu(){
     red " WJQserver Studio Linux工具箱"
     yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
     green " =================================================="
-    menu-option 1 "网站服务器                          ${green}2. ${mikublue}Docker管理WEBUI"
-    menu-option 3 "Speedtest测速                       ${green}4. ${mikublue}SyncThing同步工具"
-    menu-option 5 "服务器探针                          ${green}6. ${mikublue}Uptime-Kuma"
+    menu-option 1 "网站服务器                          ${green}2. ${mikublue}Docker管理WEBUI${white}"
+    menu-option 3 "Speedtest测速                       ${green}4. ${mikublue}SyncThing同步工具${white}"
+    menu-option 5 "服务器探针                          ${green}6. ${mikublue}Uptime-Kuma${white}"
     green " =================================================="
     option 0 "退出脚本"
     echo

@@ -57,7 +57,7 @@ function speedtest-x(){
 }
 
 #Liberspeed
-function (){
+function liberspeed(){
     wget -O liberspeed.sh ${repo_url}program/speedtest/liberspeed.sh && chmod +x liberspeed.sh && ./liberspeed.sh
 }
 

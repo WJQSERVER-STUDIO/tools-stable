@@ -10,7 +10,8 @@ mkdir -p "$data_dir"
 mkdir -p "$letsencrypt_dir"
 
 # 创建 Docker Compose 配置文件
-echo "version: '3'
+cat > docker-compose.yml <<EOF
+version: '3'
 services:
   app:
     image: 'chishin/nginx-proxy-manager-zh:release'
@@ -21,7 +22,8 @@ services:
       - '443:443'
     volumes:
       - $data_dir:/data
-      - $letsencrypt_dir:/etc/letsencrypt" > /root/data/docker_data/npm/docker-compose.yml
+      - $letsencrypt_dir:/etc/letsencrypt
+EOF      
 
 # 启动 Nginx Proxy Manager
 echo "正在启动 Nginx Proxy Manager..."

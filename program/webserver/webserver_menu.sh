@@ -39,11 +39,6 @@ option(){
     echo -e "\033[32m\033[01m ${1}. \033[38;2;57;197;187m${2}\033[0m"
 }
 
-version=$(curl -s --max-time 3 ${repo_url}Version)
-if [ $? -ne 0 ]; then
-    version="unknown"  
-fi
-
 clear
 
 # 显示免责声明
@@ -52,36 +47,18 @@ echo -e "${yellow}==============================================================
 echo -e "${mikublue}本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
 echo -e "${mikublue}使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
 echo -e "${mikublue}不提供/保证任何功能的可用性，安全性，有效性，合法性"
-echo -e "${mikublue}当前版本为${white}  [${yellow} V${version} ${white}]  ${white}"
+echo -e "${mikublue}当前版本为${white}  [${yellow} V.0.9 ${white}]  ${white}"
 echo -e "${yellow}===================================================================="
 sleep 1
 
-#
-function (){
+#Caddy Menu
+function caddy(){
+    wget -O caddy-menu.sh ${repo_url}program/caddy/caddy-menu.sh && chmod +x caddy-menu.sh && ./caddy-menu.sh
 }
 
-#
-function (){
-}
-
-#
-function (){
-}
-
-#
-function (){
-}
-
-#
-function (){
-}
-
-#
-function (){
-}
-
-#
-function (){
+#Nginx & WAF Menu
+function nginx(){
+    wget -O nginx_menu.sh ${repo_url}program/nginx/nginx_menu.sh && chmod +x nginx_menu.sh && ./nginx_menu.sh
 }
 
 #返回主脚本
@@ -95,36 +72,19 @@ function start_menu(){
     red " WJQserver Studio Linux工具箱"
     yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
     green " =================================================="
-    option 1 "" 
-    option 2 ""
-    option 3 ""
+    option 1 "Caddy" 
+    option 2 "Nginx & WAF"
     green " =================================================="
     option 0 "退出脚本"
     echo
     read -p " 请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           #
+           caddy
         ;;
         2 )
-           #
-        ;;
-        3 )
-           #
-        ;;
-        4 )
-           #
-        ;;
-        5 )
-           #
-        ;;
-        6 )
-           #
-        ;;
-        7 )
-           #
-        ;;   
-
+           nginx
+        ;; 
         0 )
            back
         ;;

@@ -2,6 +2,14 @@
 # By WJQSERVER-STUDIO_WJQSERVER
 #https://github.com/WJQSERVER/tools-stable
 
+mikublue="\033[38;2;57;197;187m"
+yellow='\033[33m'
+white='\033[0m'
+green='\033[0;32m'
+blue='\033[0;34m'
+red='\033[31m'
+gray='\e[37m'
+
 # 检查是否以 root 权限运行
 if [ "$EUID" -ne 0 ]; then
   echo "请以 root 权限运行此脚本"
@@ -63,6 +71,11 @@ fs.nr_open = 1048576
 EOF
 
 sudo sysctl -p
+
+congestion_algorithm=$(sysctl -n net.ipv4.tcp_congestion_control)
+queue_algorithm=$(sysctl -n net.core.default_qdisc)
+
+echo -e "${mikublue}網路擁塞算法: ${yellow}$congestion_algorithm $queue_algorithm"
 
 #回到root目录
 cd /root

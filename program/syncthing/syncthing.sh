@@ -31,6 +31,9 @@ systemctl daemon-reload
 CONFIG_FILE="/root/.config/syncthing/config.xml"
 systemctl enable syncthing
 systemctl start syncthing
+sleep 5
+sed -i "s|<address>.*</address>|<address>$PUBLIC_IP:$PORT</address>|" "$CONFIG_FILE"
+systemctl restart syncthing
 sed -i "s|<address>.*</address>|<address>$PUBLIC_IP:$PORT</address>|" "$CONFIG_FILE"
 systemctl restart syncthing
 

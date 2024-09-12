@@ -42,11 +42,6 @@ function jdrabbit(){
     wget -O qinglong-panel-jdrabbit.sh ${repo_url}program/qinglong-panel/qinglong-panel-jdrabbit.sh && chmod +x qinglong-panel-jdrabbit.sh && ./qinglong-panel-jdrabbit.sh
 }
 
-#饿了么面板
-function elmmb(){
-    wget -O qinglong-panel-elmmb.sh ${repo_url}program/qinglong-panel/qinglong-panel-elmmb.sh && chmod +x qinglong-panel-elmmb.sh && ./qinglong-panel-elmmb.sh
-}
-
 #返回主脚本
 function back(){
     wget -O program-menu.sh ${repo_url}program/program-menu.sh && chmod +x program-menu.sh && ./program-menu.sh

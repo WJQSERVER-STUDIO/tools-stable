@@ -96,18 +96,6 @@ function syncthing(){
     wget -O syncthing.sh ${repo_url}program/syncthing/syncthing.sh && chmod +x syncthing.sh && ./syncthing.sh
 }
 
-#
-function (){
-}
-
-#
-function (){
-}
-
-#
-function (){
-}
-
 #返回主脚本
 function back(){
     wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh

@@ -61,7 +61,10 @@ gray(){
     echo -e "\e[37m\033[01m$1\033[0m"
 }
 option(){
-    echo -e "\033[32m\033[01m ${1}. \033[38;2;57;197;187m${2}\033[0m                \033[32m\033[01m ${3}. \033[38;2;57;197;187m${4}\033[0m"
+    echo -e "\033[32m\033[01m ${1}. \033[38;2;57;197;187m${2}\033[0m"
+}
+menu-option(){
+    echo -e "\033[32m\033[01m ${1}. \033[38;2;57;197;187m${2}\033[0m"
 }
 
 clear
@@ -96,6 +99,16 @@ function syncthing(){
     wget -O syncthing.sh ${repo_url}program/syncthing/syncthing.sh && chmod +x syncthing.sh && ./syncthing.sh
 }
 
+#探针
+function monitor(){
+    wget -O monitor_menu.sh ${repo_url}program/monitor/monitor_menu.sh && chmod +x monitor_menu.sh && ./monitor_menu.sh
+}
+
+#uptime-kuma
+function uptime-kuma(){
+    wget -O uptime-kuma.sh ${repo_url}program/uptime-kuma.sh && chmod +x uptime-kuma.sh && ./uptime-kuma.sh
+}
+
 #返回主脚本
 function back(){
     wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
@@ -107,8 +120,9 @@ function start_menu(){
     red " WJQserver Studio Linux工具箱"
     yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
     green " =================================================="
-    option 1 "网站服务器/反代服务器" 2 "Docker管理WEBUI"
-    option 3 "Speedtest测速" 4 "SyncThing同步工具"
+    menu-option 1 "网站服务器                          ${green}2. ${mikublue}Docker管理WEBUI"
+    menu-option 3 "Speedtest测速                       ${green}4. ${mikublue}SyncThing同步工具"
+    menu-option 5 "服务器探针                          ${green}6. ${mikublue}Uptime-Kuma"
     green " =================================================="
     option 0 "退出脚本"
     echo

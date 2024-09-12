@@ -6,24 +6,24 @@
 source "repo_url.conf"
 
 # 获取当前版本并设置5秒超时
-version=$(curl -s --max-time 5 ${repo_url}Version)
+version=$(curl -s --max-time 3 ${repo_url}Version)
 if [ $? -ne 0 ]; then
     version="unknown"  # 设置默认值或进行其他错误处理
 fi
 
 # 获取统计信息并设置5秒超时
-total=$(curl -s --max-time 5 https://count.1888866.xyz/api/counter/total)
+total=$(curl -s --max-time 3 https://count.1888866.xyz/api/counter/total)
 if [ $? -ne 0 ]; then
     total="unknown"  # 设置默认值或进行其他错误处理
 fi
 
-today=$(curl -s --max-time 5 https://count.1888866.xyz/api/counter/daily)
+today=$(curl -s --max-time 3 https://count.1888866.xyz/api/counter/daily)
 if [ $? -ne 0 ]; then
     today="unknown"  
 fi
 
 # 统计次数
-response=$(curl -s --max-time 5 https://count.1888866.xyz/add)
+response=$(curl -s --max-time 3 https://count.1888866.xyz/add)
 if [ $? -ne 0 ]; then
     echo 
 else

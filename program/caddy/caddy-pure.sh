@@ -95,7 +95,9 @@ WantedBy=multi-user.target
 EOF
 
 echo -e "${green}>${white} $mikublue 拉取Caddyfile配置" $white
+if [ ! -f /root/data/caddy/Caddyfile ]; then
 wget -O /root/data/caddy/Caddyfile https://raw.githubusercontent.com/WJQSERVER-STUDIO/caddy/main/config/native/pure/caddyfile
+fi
 
 echo -e "${green}>${white} $mikublue 啟動程序" $white
 systemctl daemon-reload

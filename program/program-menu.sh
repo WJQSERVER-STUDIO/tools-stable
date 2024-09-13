@@ -106,7 +106,17 @@ function monitor(){
 
 #uptime-kuma
 function uptime-kuma(){
-    wget -O uptime-kuma.sh ${repo_url}program/uptime-kuma.sh && chmod +x uptime-kuma.sh && ./uptime-kuma.sh
+    wget -O uptime-kuma.sh ${repo_url}program/uptime/uptime-kuma.sh && chmod +x uptime-kuma.sh && ./uptime-kuma.sh
+}
+
+#WebSSH
+function webssh(){
+    wget -O webssh.sh ${repo_url}program/webssh/webssh.sh && chmod +x webssh.sh && ./webssh.sh
+}
+
+#IP信息查询
+function ip(){
+    wget -O ip_menu.sh ${repo_url}program/ip/ip_menu.sh && chmod +x ip_menu.sh && ./ip_menu.sh
 }
 
 #返回主脚本
@@ -123,6 +133,7 @@ function start_menu(){
     menu-option 1 "网站服务器                          ${green}2. ${mikublue}Docker管理WEBUI${white}"
     menu-option 3 "Speedtest测速                       ${green}4. ${mikublue}SyncThing同步工具${white}"
     menu-option 5 "服务器探针                          ${green}6. ${mikublue}Uptime-Kuma${white}"
+    menu-option 7 "WebSSH                             ${green}8. ${mikublue}IP信息查询${white}"
     green " =================================================="
     option 0 "退出脚本"
     echo
@@ -139,6 +150,18 @@ function start_menu(){
         ;;
         4 )
            syncthing
+        ;;
+        5 )
+           monitor
+        ;;
+        6 )
+           uptime-kuma
+        ;;
+        7 )
+           webssh
+        ;;
+        8 )
+           ip
         ;;
         0 )
            back

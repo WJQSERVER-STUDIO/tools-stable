@@ -9,29 +9,32 @@ if ! command -v docker >/dev/null || ! command -v docker-compose >/dev/null; the
 fi
 
 # 创建目录
-mkdir -p /root/data/docker_data/webssh
-cd /root/data/docker_data/webssh
+mkdir -p /root/data/docker_data/ipinfo
+cd /root/data/docker_data/ipinfo
 
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF
-version: '3'
+version: '3.9'
 services:
-  webssh:
-    image: dbcawa/webssh
-    container_name: webssh
-    restart: always
-    privileged: true
-    networks:
-      hypernet:
-        ipv4_address: 172.20.20.29
+    ip:
+        image: 'wjqserver/ip:latest'
+        restart: always
+        volumes:
+            - './ipinfo/log/run:/data/ipinfo/log'
+            - './ipinfo/log/caddy:/data/caddy/log'
+            - './ipinfo/db:/data/ipinfo/db'
+        networks:
+          hypernet:
+            ipv4_address: 172.20.20.34
 
 networks:
   hypernet:
-    external: true    
+    external: true
+
 EOF
 
 # 启动容器
-docker-compose up -d
+docker compose up -d
 
 # 提示服务访问地址
 echo "服务已成功启动！"
@@ -49,7 +52,7 @@ sleep 1
 read -p "是否返回菜单?: [Y/n]" choice
 
 if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
-    wget -O program-menu.sh ${repo_url}program/program-menu.sh && chmod +x program-menu.sh && ./program-menu.sh
+    wget -O ip_menu.sh ${repo_url}program/ip/ip_menu.sh && chmod +x ip_menu.sh && ./ip_menu.sh
 else
     echo "脚本结束"
 fi

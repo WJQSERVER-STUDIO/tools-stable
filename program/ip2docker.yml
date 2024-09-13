@@ -25,13 +25,13 @@ adguard-home
 memos 172.20.20.26:5230
 uptime 172.20.20.27:3001
 mt_photos 172.20.20.28:8063
-webssh 172.20.20.29:8888
+webssh 172.20.20.29:5032
 vanblog
   vanblog 172.20.20.30:80
   mango 172.20.20.31
 wallos 172.20.20.32:80   
 myip 172.20.20.33:18966     
-ipinfo 172.20.20.34:80
+ipinfo(WJQ) 172.20.20.34:80
 ghproxy 172.20.20.35:80
 ghproxy-0rtt 172.20.20.36:80  
 counter 172.20.20.37:80

@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#停用 此脚本存在漏洞
 # 检查输入参数
 if [ "$#" -ne 1 ]; then
     echo "Usage: $0 <max_memory>"

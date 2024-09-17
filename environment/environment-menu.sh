@@ -1,6 +1,9 @@
 #! /bin/bash
 # By WJQSERVER-STUDIO_WJQSERVER
-#https://github.com/WJQSERVER/tools-stable
+#https://github.com/WJQSERVER-STUDIO/tools-stable
+
+# 导入配置文件
+source "repo_url.conf"
 
 mikublue="\033[38;2;57;197;187m"
 yellow='\033[33m'
@@ -9,6 +12,32 @@ green='\033[0;32m'
 blue='\033[0;34m'
 red='\033[31m'
 gray='\e[37m'
+
+#彩色
+mikublue(){
+    echo -e "\033[38;2;57;197;187m\033[01m$1\033[0m"
+}
+white(){
+    echo -e "\033[0m\033[01m$1\033[0m"
+}
+red(){
+    echo -e "\033[31m\033[01m$1\033[0m"
+}
+green(){
+    echo -e "\033[32m\033[01m$1\033[0m"
+}
+yellow(){
+    echo -e "\033[33m\033[01m$1\033[0m"
+}
+blue(){
+    echo -e "\033[34m\033[01m$1\033[0m"
+}
+gray(){
+    echo -e "\e[37m\033[01m$1\033[0m"
+}
+option(){
+    echo -e "\033[32m\033[01m ${1}. \033[38;2;57;197;187m${2}\033[0m"
+}
 
 clear
 
@@ -24,24 +53,6 @@ echo -e "${yellow}==============================================================
 # 导入配置文件
 source "repo_url.conf"
 sleep 1
-
-#彩色
-red(){
-    echo -e "\033[31m\033[01m$1\033[0m"
-}
-green(){
-    echo -e "\033[32m\033[01m$1\033[0m"
-}
-yellow(){
-    echo -e "\033[33m\033[01m$1\033[0m"
-}
-blue(){
-    echo -e "\033[34m\033[01m$1\033[0m"
-}
-
-mikublue(){
-    echo -e "\033[38;2;57;197;187m$\033[0m"
-}
 
 #GO
 function go(){
@@ -61,15 +72,13 @@ function back(){
 #主菜单
 function start_menu(){
     clear
-    yellow " WJQserver Studio 工具箱 Stable"
-    green " WJQserver Studio tools-stable" 
-    yellow " FROM: https://github.com/WJQSERVER/tools-stable "
-    green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
-    yellow " =================================================="
-    green " 1. GO环境" 
-    green " 2. XCaddy环境"
-    yellow " =================================================="
-    green " 0. 返回主脚本"
+    red " WJQserver Studio Linux工具箱"
+    yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
+    green " =================================================="
+    option 1 "Golang" 
+    option 2 "XCaddy"
+    green " =================================================="
+    option 0 "退出脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
@@ -79,22 +88,6 @@ function start_menu(){
         2 )
            xcaddy
         ;;
-       3 )
-           #
-        ;;
-        4 )
-           #
-        ;;
-        5 )
-           #
-        ;;
-        6 )
-           #
-        ;;
-        7 )
-           #
-        ;;   
-
         0 )
            back
         ;;

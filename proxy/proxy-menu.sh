@@ -41,13 +41,20 @@ option(){
 
 clear
 
+version=$(curl -s --max-time 3 ${repo_url}Version)
+if [ $? -ne 0 ]; then
+    version="unknown"  
+fi
+
+clear
+
 # 显示免责声明
 echo -e "${red}免责声明：${mikublue}请阅读并同意以下条款才能继续使用本脚本。"
 echo -e "${yellow}===================================================================="
 echo -e "${mikublue}本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
 echo -e "${mikublue}使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
 echo -e "${mikublue}不提供/保证任何功能的可用性，安全性，有效性，合法性"
-echo -e "${mikublue}当前版本为${white}  [${yellow} V.0.9 ${white}]  ${white}"
+echo -e "${mikublue}当前版本为${white}  [${yellow} V${version} ${white}]  ${white}"
 echo -e "${yellow}===================================================================="
 sleep 1
 

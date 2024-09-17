@@ -27,14 +27,6 @@ sudo systemctl start docker
 # 添加当前用户到 docker 用户组
 sudo usermod -aG docker $USER
 
-# 安装 Docker Compose
-sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-
-# 验证 Docker 和 Docker Compose 安装
-docker --version
-docker-compose --version
-
 #日志大小及IPV6设置
 cat > /etc/docker/daemon.json <<EOF
 {
@@ -55,6 +47,14 @@ docker network create --subnet=172.20.0.0/16 --ipv6 --subnet=fd00:a380:a321:c0::
 
 #重启Docker
 systemctl restart docker
+
+# 安装 Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# 验证 Docker 和 Docker Compose 安装
+docker --version
+docker-compose --version
 
 echo -e "[${green}OK${white}] $mikublue Docker 安装成功" $white
 

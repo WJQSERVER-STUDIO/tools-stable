@@ -1,6 +1,6 @@
 #! /bin/bash
 # By WJQSERVER-STUDIO_WJQSERVER
-#https://github.com/WJQSERVER/tools-stable
+#https://github.com/WJQSERVER-STUDIO/tools-stable
 
 # 导入配置文件
 source "repo_url.conf"
@@ -39,8 +39,6 @@ option(){
     echo -e "\033[32m\033[01m ${1}. \033[38;2;57;197;187m${2}\033[0m"
 }
 
-clear
-
 version=$(curl -s --max-time 3 ${repo_url}Version)
 if [ $? -ne 0 ]; then
     version="unknown"  
@@ -60,51 +58,37 @@ sleep 1
 
 #BBR管理面板
 function bbr-manager(){
-wget --no-check-certificate -O tcpx.sh https://raw.githubusercontent.com/ylx2016/Linux-NetSpeed/master/tcpx.sh
-chmod +x tcpx.sh
-./tcpx.sh
-
-#等待1s
-sleep 1
-
-#返回菜单/退出脚本
-read -p "是否返回菜单?: [Y/n]" choice
-
-if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
-    wget -O systools-menu.sh ${repo_url}systools/systools-menu.sh && chmod +x systools-menu.sh && ./systools-menu.sh
-else
-    echo "脚本结束"
-fi
+    wget -O network_menu.sh ${repo_url}systools/network/network_menu.sh && chmod +x network_menu.sh && ./network_menu.sh
 }
 
 #WARP
 function warp(){
-wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh d
+    wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh d
 }
 
 #WARP-GO
 function warp-go(){
-wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh && bash warp-go.sh d
+    wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh && bash warp-go.sh d
 }
 
 #X-UI原版
 function x-ui(){
-bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) 0.3.2
+    bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) 0.3.2
 }
 
 #X-UI_F大魔改版
 function x-ui_f(){
-bash <(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/install.sh) 0.3.4.4
+    bash <(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/install.sh) 0.3.4.4
 }
 
 #3X-UI
 function 3x-ui(){
-bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh) v2.4.1
+    bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh) v2.4.1
 }
 
 #3X-UI_中文優化版
 function 3x-ui-cn(){
-bash <(curl -Ls https://raw.githubusercontent.com/xeefei/3x-ui/master/install.sh) v2.4.0
+    bash <(curl -Ls https://raw.githubusercontent.com/xeefei/3x-ui/master/install.sh) v2.4.1
 }
 
 #ArgoX F大

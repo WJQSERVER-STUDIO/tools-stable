@@ -10,6 +10,8 @@ blue='\033[0;34m'
 red='\033[31m'
 gray='\e[37m'
 
+go_version="1.23.1"
+
 echo -e "[${green}RUN${white}] $mikublue 開始安裝XCaddy環境" $white
 echo -e "${green}>${white} $mikublue 更新軟件包" $white
 apt update
@@ -18,10 +20,10 @@ echo -e "${green}>${white} $mikublue 拉取必要依賴" $white
 apt install curl vim wget gnupg dpkg apt-transport-https lsb-release ca-certificates
 
 echo -e "${green}>${white} $mikublue 拉取GO安裝包" $white
-wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
+wget https://go.dev/dl/go${go_version}.linux-amd64.tar.gz
 echo -e "${green}>${white} $mikublue 清理GO相關目錄" $white
 echo -e "${green}>${white} $mikublue 解壓GO安裝包" $white
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go${go_version}.linux-amd64.tar.gz
 echo -e "${green}>${white} $mikublue 添加GO環境變量" $white
 echo "export PATH=\$PATH:/usr/local/go/bin" >> /etc/profile
 echo -e "${green}>${white} $mikublue 導入GO變量" $white

@@ -1,6 +1,6 @@
 #! /bin/bash
 # By WJQSERVER-STUDIO_WJQSERVER
-#https://github.com/WJQSERVER/tools-stable
+#https://github.com/WJQSERVER-STUDIO/tools-stable
 
 # 导入配置文件
 source "repo_url.conf"
@@ -39,6 +39,11 @@ option(){
     echo -e "\033[32m\033[01m ${1}. \033[38;2;57;197;187m${2}\033[0m"
 }
 
+version=$(curl -s --max-time 3 ${repo_url}Version)
+if [ $? -ne 0 ]; then
+    version="unknown"  
+fi
+
 clear
 
 # 显示免责声明
@@ -47,35 +52,36 @@ echo -e "${yellow}==============================================================
 echo -e "${mikublue}本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
 echo -e "${mikublue}使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
 echo -e "${mikublue}不提供/保证任何功能的可用性，安全性，有效性，合法性"
-echo -e "${mikublue}当前版本为${white}  [${yellow} V.0.9 ${white}]  ${white}"
+echo -e "${mikublue}当前版本为${white}  [${yellow} V${version} ${white}]  ${white}"
 echo -e "${yellow}===================================================================="
 sleep 1
 
-#
+# 网络信息查看
 function networkinfo(){
     wget -O networkinfo.sh ${repo_url}systools/network/networkinfo.sh && chmod +x networkinfo.sh && ./networkinfo.sh
 }
 
-#
+# IPv4/IPv6 優先級切換
 function ipv_switch(){
     wget -O ipv-switch.sh ${repo_url}systools/network/ipv-switch.sh && chmod +x ipv-switch.sh && ./ipv-switch.sh
 }
 
-#
+# BBR 管理面板
 function bbr(){
     wget -O bbr-manager.sh ${repo_url}systools/network/bbr-manager.sh && chmod +x bbr-manager.sh && ./bbr-manager.sh
 }
 
-#
+# 更換 DNS
 function change_dns(){
     wget -O change_dns.sh ${repo_url}systools/network/change_dns.sh && chmod +x change_dns.sh && ./change_dns.sh
 }
 
-#
+# 檢測端口占用
 function check_port_usage(){
     wget -O check_port_usage.sh ${repo_url}systools/network/check_port_usage.sh && chmod +x check_port_usage.sh && ./check_port_usage.sh
 }
 
+# BBR 参数调优 (Debian10+可用)
 function bbr-tcpx-flow(){
     wget -O bbr-tcpx-flow.sh ${repo_url}systools/network/bbr-tcpx-flow.sh && chmod +x bbr-tcpx-flow.sh && ./bbr-tcpx-flow.sh
 }

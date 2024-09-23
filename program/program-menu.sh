@@ -124,6 +124,16 @@ function ip(){
     wget -O ip_menu.sh ${repo_url}program/ip/ip_menu.sh && chmod +x ip_menu.sh && ./ip_menu.sh
 }
 
+#Git服务器
+function gits(){
+    wget -O gits_menu.sh ${repo_url}program/gits/gits_menu.sh && chmod +x gits_menu.sh && ./gits_menu.sh
+}
+
+#Github代理
+function ghproxy(){
+    wget -O ghproxy.sh ${repo_url}program/ghproxy/ghproxy.sh && chmod +x ghproxy.sh && ./ghproxy.sh
+}
+
 #返回主脚本
 function back(){
     wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
@@ -139,6 +149,7 @@ function start_menu(){
     menu-option 3 "Speedtest测速                       ${green}4. ${mikublue}SyncThing同步工具${white}"
     menu-option 5 "服务器探针                          ${green}6. ${mikublue}Uptime-Kuma${white}"
     menu-option 7 "WebSSH                             ${green}8. ${mikublue}IP信息查询${white}"
+    menu-option 9 "Git服务器                           ${green}10. ${mikublue}Github代理${white}"
     green " =================================================="
     option 0 "退出脚本"
     echo
@@ -167,6 +178,12 @@ function start_menu(){
         ;;
         8 )
            ip
+        ;;
+        9 )
+           gits
+        ;;
+        10 )
+           ghproxy
         ;;
         0 )
            back

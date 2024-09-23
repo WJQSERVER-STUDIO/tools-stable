@@ -81,7 +81,7 @@ function user(){
     wget -O user_menu.sh ${repo_url}systools/user/user_menu.sh && chmod +x user_menu.sh && ./user_menu.sh
 }
 
-#网络配置
+#网络 &BBR
 function network(){
     wget -O network_menu.sh ${repo_url}systools/network/network_menu.sh && chmod +x network_menu.sh && ./network_menu.sh
 }

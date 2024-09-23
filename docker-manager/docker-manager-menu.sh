@@ -125,25 +125,25 @@ function start_menu(){
     case "$menuNumberInput" in
         1 )
            docker-install
-	    ;;
+        ;;
         2 )
-	       docker-info
+           docker-info
         ;;
-	    3 )
+        3 )
            docker-container
-	    ;;
+        ;;
         4 )
-	       docker-image
+           docker-image
         ;;
-	    5 )
+        5 )
            docker-network
-	    ;;
-        6 )
-	       docker-volume
         ;;
-	    7 )
+        6 )
+           docker-volume
+        ;;
+        7 )
            docker-rm-unused
-	    ;;   
+        ;;   
         8 )
            docker-remove
         ;;

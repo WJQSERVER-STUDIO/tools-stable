@@ -26,7 +26,7 @@ fi
 ufw allow from ::/0 to any port "$port"
 
 # 输出结果
-echo -e "[${green}OK${white}] $mikublue 已成功开启 IPv6 端口 $port。$white "
+echo -e "[${green}OK${white}] ${mikublue}已开启IPv6上的${port}端口${white} "
 
 #回到root目录
 cd /root

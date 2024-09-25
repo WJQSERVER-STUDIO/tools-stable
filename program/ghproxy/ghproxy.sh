@@ -15,13 +15,13 @@ cd /root/data/docker_data/ghproxy
 # 创建 docker-compose.yml 文件
 version: '3.9'
 services:
-    ghproxy0rtt:
-        image: 'wjqserver/ghproxy-0rtt:dev'
+    ghproxy:
+        image: 'wjqserver/ghproxy:latest'
         restart: always
         volumes:
-            - './log/run:/data/ghproxy/log'
-            - './log/caddy:/data/caddy/log'
-            - './config:/data/ghproxy/config'
+            - './ghproxy/log/run:/data/ghproxy/log'
+            - './ghproxy/log/caddy:/data/caddy/log'
+            - './ghproxy/config:/data/ghproxy/config'
         networks:
           hypernet:
             ipv4_address: 172.20.20.36

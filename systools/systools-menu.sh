@@ -81,6 +81,11 @@ function user(){
     wget -O user_menu.sh ${repo_url}systools/user/user_menu.sh && chmod +x user_menu.sh && ./user_menu.sh
 }
 
+# 安装软件包
+function package(){
+    wget -O package_install.sh ${repo_url}systools/package/package_install.sh && chmod +x package_install.sh && ./package_install.sh
+}
+
 #网络 &BBR
 function network(){
     wget -O network_menu.sh ${repo_url}systools/network/network_menu.sh && chmod +x network_menu.sh && ./network_menu.sh
@@ -133,7 +138,7 @@ function start_menu(){
     option 2 "修改时区"
     option 3 "修改密码"
     option 4 "修改SSH配置"
-    option 5 "用户管理"
+    option 5 "安装软件包"
     green " =================================================="
     option 6 "网络配置 &BBR"
     option 7 "修改日志配置"
@@ -153,25 +158,25 @@ function start_menu(){
     case "$menuNumberInput" in
         1 )
            change_hostname
-	    ;;
+        ;;
         2 )
-	       timezone
+           timezone
         ;;
-	    3 )
+        3 )
            password
-	    ;;
+        ;;
         4 )
-	       ssh
+           ssh
         ;;
-	     5 )
-           user
-	    ;;
+        5 )
+           package
+        ;;
         6 )
-	       network
+           network
         ;;
-	    7 )
+        7 )
            log
-	    ;;
+        ;;
         8 )
            firewall
         ;;

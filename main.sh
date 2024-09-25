@@ -66,7 +66,7 @@ option(){
 
 #系统信息
 function sysinfo(){
-    wget -O sysinfo.sh ${repo_url}sysinfo.sh && chmod +x sysinfo.sh && ./sysinfo.sh
+    wget -O sysinfo.sh ${repo_url}systools/sysinfo.sh && chmod +x sysinfo.sh && ./sysinfo.sh
 }
 
 #docker管理

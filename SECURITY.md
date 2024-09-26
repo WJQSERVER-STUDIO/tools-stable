@@ -6,8 +6,8 @@
 
 | 版本 | 是否支持 |
 | --- | --- |
-| v1.0.0 | :white_check_mark: |
-| v1.0.0-beta | :warning: 这是 beta 版本,可能存在未知的安全隐患 |
+| v1.x.x | :white_check_mark: |
+| v1.x.x-beta | :warning: 这是 beta 版本,可能存在未知的安全隐患 |
 | v0.x.x | :x: 这些版本不再受支持 |
 
 ### 版本说明

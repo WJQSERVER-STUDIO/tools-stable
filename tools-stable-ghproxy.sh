@@ -3,7 +3,7 @@
 #https://github.com/WJQSERVER/tools-stable
 
 #Stable版 ghproxy
-repo_url="https://ghproxy0rtt.1888866.xyz/raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/"
+repo_url="https://ghproxy.1888866.xyz/raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/"
 
 # 获取当前版本并设置3秒超时
 version=$(curl -s --max-time 3 ${repo_url}Version)

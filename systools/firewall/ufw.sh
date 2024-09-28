@@ -73,7 +73,7 @@ fi
 read -p "请输入SSH端口(请确保输入正确以开启UFW防火墙端口): " PORT
 
 #使用通用脚本安装依赖
-wget -O install.sh ${repo_url}/install.sh && chmod +x install.sh && ./install.sh ufw
+wget -O install.sh ${repo_url}systools/install.sh && chmod +x install.sh && ./install.sh ufw
 
 #UFW配置
 sudo ufw default deny incoming 

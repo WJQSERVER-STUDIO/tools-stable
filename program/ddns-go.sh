@@ -7,14 +7,17 @@ mkdir -p /root/data/ddns_go
 cd /root/data/ddns_go
 
 #下载
-wget https://github.com/jeessy2/ddns-go/releases/latest/download/ddns-go_6.6.3_linux_x86_64.tar.gz
+wget https://github.com/jeessy2/ddns-go/releases/latest/download/ddns-go_6.7.0_linux_x86_64.tar.gz
 
 #解压
-tar -xzvf ddns-go_6.6.3_linux_x86_64.tar.gz
-rm ddns-go_6.6.3_linux_x86_64.tar.gz
+tar -xzvf ddns-go_6.7.0_linux_x86_64.tar.gz
+rm ddns-go_6.7.0_linux_x86_64.tar.gz
 
 #赋权
 chmod +x /root/data/ddns_go/ddns-go
+
+# 创建配置文件
+touch /root/data/ddns_go/.ddns_go_config.yaml
 
 # 创建服务文件
 cat <<EOF > /etc/systemd/system/ddns-go.service
@@ -23,7 +26,7 @@ Description=DDNS GO
 After=network.target
 
 [Service]
-ExecStart=/root/data/ddns_go/ddns-go -s install -f 600 -c /root/data/ddns_go/.ddns_go_config.yaml -l :19877
+ExecStart=/root/data/ddns_go/ddns-go -f 600 -c /root/data/ddns_go/.ddns_go_config.yaml -l :19877
 WorkingDirectory=/root/data/ddns_go
 Restart=always
 User=root

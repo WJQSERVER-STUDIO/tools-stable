@@ -66,6 +66,11 @@ function docker-info(){
 wget -O docker-info.sh ${repo_url}docker-manager/docker-info.sh && chmod +x docker-info.sh && ./docker-info.sh
 }
 
+#Docker容器资源占用查看
+function docker-container-stats(){
+    docker stats
+}
+
 #Docker容器管理
 function docker-container(){
 wget -O docker-container.sh ${repo_url}docker-manager/docker-container.sh && chmod +x docker-container.sh && ./docker-container.sh
@@ -109,15 +114,16 @@ function start_menu(){
     green " =================================================="
     option 1 "Docker一键安装&更新"
     option 2 "查看Docker状态"
+    option 3 "Docker容器资源占用查看"
     green " =================================================="
-    option 3 "Docker容器管理"
-    option 4 "Docker镜像管理"
-    option 5 "Docker网络管理"
-    option 6 "Docker卷管理"
+    option 4 "Docker容器管理"
+    option 5 "Docker镜像管理"
+    option 6 "Docker网络管理"
+    option 7 "Docker卷管理"
     green " =================================================="
-    option 7 "清理未使用Docker资源"
+    option 8 "清理未使用Docker资源"
     green " =================================================="
-    option 8 "Docker一键卸载"
+    option 9 "Docker一键卸载"
     green " =================================================="
     option 0 "退出脚本"
     echo
@@ -130,25 +136,28 @@ function start_menu(){
            docker-info
         ;;
         3 )
-           docker-container
+           docker-container-stats
         ;;
         4 )
-           docker-image
+           docker-container
         ;;
         5 )
-           docker-network
+           docker-image
         ;;
         6 )
-           docker-volume
+           docker-network
         ;;
         7 )
+           docker-volume
+        ;;
+        8 )
            docker-rm-unused
         ;;   
-        8 )
+        9 )
            docker-remove
         ;;
         0 )
-            back
+            exit 0
         ;;
 	
         * )
@@ -158,4 +167,5 @@ function start_menu(){
         ;;
     esac
 }
+
 start_menu "first"

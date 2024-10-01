@@ -83,7 +83,7 @@ function x-ui_f(){
 
 #3X-UI
 function 3x-ui(){
-    bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh) v2.4.2
+    bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh) v2.4.3
 }
 
 #3X-UI_中文優化版

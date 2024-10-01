@@ -141,7 +141,7 @@ function start_menu(){
     option 5 "安装软件包"
     green " =================================================="
     option 6 "网络配置 &BBR"
-    option 7 "修改日志配置"
+    option 7 "修改日志配置 (journald)"
     option 8 "防火墙配置"
     green " =================================================="
     option 9 "SWAP 配置"

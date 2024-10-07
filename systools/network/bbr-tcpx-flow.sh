@@ -64,6 +64,7 @@ net.ipv4.tcp_frto = 2
 net.ipv4.tcp_no_metrics_save = 1
 net.ipv4.ip_forward = 1
 net.ipv6.conf.all.forwarding = 1
+net.ipv4.tcp_pacing_ca_ratio=110
 fs.file-max = 104857600
 fs.inotify.max_user_instances = 8192
 fs.nr_open = 1048576

@@ -56,9 +56,9 @@ echo -e "${mikublue}当前版本为${white}  [${yellow} V${version} ${white}]  $
 echo -e "${yellow}===================================================================="
 sleep 1
 
-#IPinfo
-function ipinfo(){
-    wget -O ipinfo.sh ${repo_url}program/ip/ipinfo.sh && chmod +x ipinfo.sh && ./ipinfo.sh
+#IP
+function ip(){
+    wget -O ip.sh ${repo_url}program/ip/ip.sh && chmod +x ip.sh && ./ip.sh
 }
 
 #MyIP
@@ -77,7 +77,7 @@ function start_menu(){
     red " WJQserver Studio Linux工具箱"
     yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
     green " =================================================="
-    option 1 "IPinfo" 
+    option 1 "IP" 
     option 2 "MyIP"
     green " =================================================="
     option 0 "退出脚本"
@@ -85,7 +85,7 @@ function start_menu(){
     read -p " 请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           ipinfo
+           ip
         ;;
         2 )
            myip

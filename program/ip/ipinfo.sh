@@ -9,8 +9,8 @@ if ! command -v docker >/dev/null || ! command -v docker-compose >/dev/null; the
 fi
 
 # 创建目录
-mkdir -p /root/data/docker_data/ipinfo
-cd /root/data/docker_data/ipinfo
+mkdir -p /root/data/docker_data/ip
+cd /root/data/docker_data/ip
 
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF
@@ -20,9 +20,9 @@ services:
         image: 'wjqserver/ip:latest'
         restart: always
         volumes:
-            - './ipinfo/log/run:/data/ipinfo/log'
-            - './ipinfo/log/caddy:/data/caddy/log'
-            - './ipinfo/db:/data/ipinfo/db'
+            - './ip/log/run:/data/ip/log'
+            - './ip/log/caddy:/data/caddy/log'
+            - './ip/db:/data/ip/db'
         networks:
           hypernet:
             ipv4_address: 172.20.20.34

@@ -63,7 +63,12 @@ function caddy_pure(){
 
 # caddy extra
 function caddy_extra(){
-    wget -O caddy.sh ${repo_url}program/caddy/caddy.sh && chmod +x caddy.sh && ./caddy.sh
+    wget -O caddy-extra.sh ${repo_url}program/caddy/caddy-extra.sh && chmod +x caddy-extra.sh && ./caddy-extra.sh
+}
+
+# caddy extra-daily-build
+function caddy_daily(){
+    wget -O caddy-daily.sh ${repo_url}program/caddy/caddy-daily.sh && chmod +x caddy-daily.sh && ./caddy-daily.sh
 }
 
 # caddy l4

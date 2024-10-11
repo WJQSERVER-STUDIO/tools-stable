@@ -20,7 +20,7 @@
         format transform `{request>headers>X-Forwarded-For>[0]:request>remote_ip} - {user_id} [{ts}] "{request>method} {request>uri} {request>proto}" {status} {size} "{request>headers>Referer>[0]}" "{request>headers>User-Agent>[0]}"` {
             time_format "02/Jan/2006:15:04:05 -0700"
         }
-	    output file /root/data/caddy/log/{args.0}/access.log {
+	    output file /root/data/caddy/log/{args[0]}/access.log {
 	        roll_size 25MB
 	        roll_keep 10
 	        roll_keep_for 24h
@@ -48,8 +48,8 @@
 (cache) {
     cache {
          allowed_http_verbs GET
-         stale {args.0}
-         ttl {args.1}
+         stale {args[0]}
+         ttl {args[1]}
     }    
 }
 
@@ -62,14 +62,8 @@
 
 (tls) {
     tls {
-	    dns {args.0} {args.1} 
+	    dns {args[0]} {args[1]} 
     }    
-}
-
-(buffer) {
-    flush_interval 2000s
-	buffer_responses
-	max_buffer_size 256k
 }
 
 (rate_limit) {
@@ -79,7 +73,7 @@
 }
 
 (route_nocache) {
-    route {args.0} {
+    route {args[0]} {
         rate_limit {remote.ip} {args.1}r/m 10000 429
         cache {
             stale 0s

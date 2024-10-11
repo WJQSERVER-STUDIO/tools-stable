@@ -72,8 +72,10 @@ fi
 
 read -p "请输入SSH端口(请确保输入正确以开启UFW防火墙端口): " PORT
 
+
 #使用通用脚本安装依赖
 wget -O install.sh ${repo_url}systools/install.sh && chmod +x install.sh && ./install.sh ufw
+echo -e "[${green}OK${white}] $mikublue UFW安装完成" $white
 
 #UFW配置
 sudo ufw default deny incoming 
@@ -111,8 +113,7 @@ wget -O /etc/fail2ban/jail.d/sshd.local https://raw.githubusercontent.com/WJQSER
 systemctl restart fail2ban 
 echo -e "[${green}OK${white}] $mikublue fail2ban部署完成" $white
 
-echo "UFW 已成功部署！"
-echo "防火墙已启用，并且只允许指定的端口通过。"
+echo -e "[${green}Finished${white}] $mikublue 已部署UFW与Fail2ban" $white
 
 #回到root目录
 cd /root

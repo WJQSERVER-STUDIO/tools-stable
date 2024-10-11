@@ -88,21 +88,25 @@ function start_menu(){
     yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
     green " =================================================="
     option 1 "Caddy扩展版" 
-    option 2 "Caddy原版"
-    option 3 "Caddy扩展版-Layer4"
+    option 2 "Caddy扩展版 Daily Build"
+    option 3 "Caddy原版"
+    option 4 "Caddy扩展版-Layer4"
     green " =================================================="
     option 0 "返回主脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           caddy_extra
+            caddy_extra
         ;;
         2 )
-           caddy_pure
+            caddy_daily
         ;;
         3 )
-           caddy_l4
+            caddy_pure
+        ;;
+        4 )
+            caddy_l4
         ;;
         0 )
            back

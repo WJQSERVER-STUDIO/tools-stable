@@ -9,27 +9,31 @@ if ! command -v docker >/dev/null || ! command -v docker-compose >/dev/null; the
 fi
 
 # 创建目录
-mkdir -p /root/data/docker_data/ghproxy
-cd /root/data/docker_data/ghproxy
+mkdir -p /root/data/docker_data/forgejo
+cd /root/data/docker_data/forgejo
 
 # 创建 docker-compose.yml 文件
-version: '3.9'
+cat > docker-compose.yml <<EOF
+version: '3'
+
 services:
-    ghproxy:
-        image: 'wjqserver/ghproxy:latest'
-        restart: always
-        volumes:
-            - './ghproxy/log/run:/data/ghproxy/log'
-            - './ghproxy/log/caddy:/data/caddy/log'
-            - './ghproxy/config:/data/ghproxy/config'
-        networks:
-          hypernet:
-            ipv4_address: 172.20.20.35
+  forgejo:
+    image: codeberg.org/forgejo/forgejo:8
+    container_name: forgejo
+    restart: always
+    networks:
+      - forgejo
+    volumes:
+      - ./data:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      hypernet:
+        ipv4_address: 172.20.20.41
 
 networks:
   hypernet:
     external: true
-
 EOF
 
 # 启动容器

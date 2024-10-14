@@ -157,7 +157,7 @@ function start_menu(){
            docker-remove
         ;;
         0 )
-            exit 0
+            back
         ;;
 	
         * )

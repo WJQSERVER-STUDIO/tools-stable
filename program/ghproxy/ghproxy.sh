@@ -24,7 +24,7 @@ services:
             - './ghproxy/config:/data/ghproxy/config'
         networks:
           hypernet:
-            ipv4_address: 172.20.20.36
+            ipv4_address: 172.20.20.35
 
 networks:
   hypernet:

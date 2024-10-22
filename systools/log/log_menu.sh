@@ -71,6 +71,11 @@ function none(){
     wget -O log_none.sh ${repo_url}systools/log/log_none.sh && chmod +x log_none.sh && ./log_none.sh
 }
 
+# 限制日志大小
+function limit(){
+    wget -O log_limit.sh ${repo_url}systools/log/log_limit.sh && chmod +x log_limit.sh && ./log_limit.sh
+}
+
 #返回主脚本
 function back(){
     wget -O systools-menu.sh ${repo_url}systools/systools-menu.sh && chmod +x systools-menu.sh && ./systools-menu.sh
@@ -85,6 +90,7 @@ function start_menu(){
     option 1 "日志存至硬盘" 
     option 2 "日志快速刷写"
     option 3 "不存储日志"
+    option 4 "限制日志大小"
     green " =================================================="
     option 0 "返回主脚本"
     echo
@@ -98,6 +104,9 @@ function start_menu(){
         ;;
         3 )
            none
+        ;;
+        4 )
+           limit
         ;;
         0 )
            back

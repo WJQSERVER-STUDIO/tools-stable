@@ -83,10 +83,10 @@ function x-ui_f(){
 
 #3X-UI
 function 3x-ui(){
-    bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh) v2.4.5
+    bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh) v2.4.6
 }
 
-#3X-UI_中文優化版
+#3X-UI_中文
 function 3x-ui-cn(){
     bash <(curl -Ls https://raw.githubusercontent.com/xeefei/3x-ui/master/install.sh) v2.4.1
 }
@@ -115,7 +115,7 @@ function start_menu(){
     option 4 "X-UI"
     option 5 "X-UI_FranzKafkaYu分支"
     option 6 "3X-UI"
-    option 7 "3X-UI_中文優化版(分支)"
+    option 7 "3X-UI_中文特化版(分支)"
     option 8 "ArgoX"
     green " =================================================="
     option 9 "返回主菜单"

@@ -67,34 +67,54 @@ function debain-12(){
     sleep 1
     read -p "输入新系统密码:" PASSWORD
     wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -debian 12 -pwd $PASSWORD --bbr
+    read -p "是否立即重启系统? (y/n):" will_reboot
+    if [ "$will_reboot" == "y" ]; then
+        reboot
+    fi
 }
 
 function debian-11(){
     echo "即将安装Debian-11系统,原系统数据将被清空"
     sleep 1
     read -p "输入新系统密码:" PASSWORD
-    wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -debian 11 -pwd $PASSWORD    
+    wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -debian 11 -pwd $PASSWORD
+    read -p "是否立即重启系统? (y/n):" will_reboot
+    if [ "$will_reboot" == "y" ]; then
+        reboot
+    fi 
 }
 
 function debian-10(){
     echo "即将安装Debian-10系统,原系统数据将被清空"
     sleep 1
     read -p "输入新系统密码:" PASSWORD
-    wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -debian 10 -pwd $PASSWORD   
+    wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -debian 10 -pwd $PASSWORD
+    read -p "是否立即重启系统? (y/n):" will_reboot
+    if [ "$will_reboot" == "y" ]; then
+        reboot
+    fi
 }
 
 function alpine-edge(){
     echo "即将安装Alpine-Edge系统,原系统数据将被清空"
     sleep 1
     read -p "输入新系统密码:" PASSWORD
-    wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -alpine -pwd $PASSWORD      
+    wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -alpine -pwd $PASSWORD
+    read -p "是否立即重启系统? (y/n):" will_reboot
+    if [ "$will_reboot" == "y" ]; then
+        reboot
+    fi
 }
 
 function ubuntu-22(){
     echo "即将安装Ubuntu-22.04系统,原系统数据将被清空"
     sleep 1
     read -p "输入新系统密码:" PASSWORD
-    wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -ubuntu 22.04 -pwd $PASSWORD 
+    wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -ubuntu 22.04 -pwd $PASSWORD
+    read -p "是否立即重启系统? (y/n):" will_reboot
+    if [ "$will_reboot" == "y" ]; then
+        reboot
+    fi     
 }
 
 function ubuntu-20(){
@@ -102,6 +122,10 @@ function ubuntu-20(){
     sleep 1
     read -p "输入新系统密码:" PASSWORD
     wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -ubuntu 20.04 -pwd $PASSWORD 
+    read -p "是否立即重启系统? (y/n):" will_reboot
+    if [ "$will_reboot" == "y" ]; then
+        reboot
+    fi    
 }
 
 function almalinux-9(){
@@ -109,6 +133,10 @@ function almalinux-9(){
     sleep 1
     read -p "输入新系统密码:" PASSWORD
     wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -almalinux 9 -pwd $PASSWORD
+    read -p "是否立即重启系统? (y/n):" will_reboot
+    if [ "$will_reboot" == "y" ]; then
+        reboot
+    fi    
 }
 
 function centos-stream(){
@@ -116,6 +144,10 @@ function centos-stream(){
     sleep 1
     read -p "输入新系统密码:" PASSWORD
     wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -centos -pwd $PASSWORD
+    read -p "是否立即重启系统? (y/n):" will_reboot
+    if [ "$will_reboot" == "y" ]; then
+        reboot
+    fi    
 }
 
 #返回主脚本

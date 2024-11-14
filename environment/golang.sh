@@ -10,7 +10,7 @@ blue='\033[0;34m'
 red='\033[31m'
 gray='\e[37m'
 
-version="1.23.2"
+version="1.23.3"
 
 echo -e "[${green}RUN${white}] $mikublue 開始安裝GO環境" $white
 echo -e "${green}>${white} $mikublue     拉取安裝包" $white

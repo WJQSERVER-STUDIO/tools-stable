@@ -1,6 +1,14 @@
 #! /bin/bash
 #删除腾讯云控,保护隐私安全
 
+#判断是否为root用户
+if [ $(id -u)!= "0" ]; then
+    echo -e "${red}>${white} 請以root身份執行此指令" $white
+    exit 1
+fi
+
+
+
 echo -e "[${yellow}RUN${white}] $mikublue 開始刪除騰訊雲控" $white
 
 sleep 1

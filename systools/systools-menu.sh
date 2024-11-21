@@ -106,9 +106,9 @@ function swap(){
     wget -O swap.sh ${repo_url}systools/swap.sh && chmod +x swap.sh && ./swap.sh
 }
 
-#反腾讯云控
-function antitencent(){
-    wget -O anti_tencent_ctrl.sh ${repo_url}systools/anti_tencent_ctrl.sh && chmod +x anti_tencent_ctrl.sh && ./anti_tencent_ctrl.sh
+#反云控
+function antictrl(){
+    wget -O anti_cloud_ctrl_menu.sh ${repo_url}systools/anti_cloud_ctrl/anti_cloud_ctrl_menu.sh && chmod +x anti_cloud_ctrl_menu.sh && ./anti_cloud_ctrl_menu.sh
 }
 
 #一键DD
@@ -146,7 +146,7 @@ function start_menu(){
     green " =================================================="
     option 9 "SWAP 配置"
     green " =================================================="
-    option 10 "解除腾讯云控"
+    option 10 "关闭服务商云控"
     green " =================================================="
     option 90 "一键DD系统"
     option 99 "重启"
@@ -184,7 +184,7 @@ function start_menu(){
            swap
         ;;
         10)
-           antitencent
+           antictrl
         ;;
         90)
            dd

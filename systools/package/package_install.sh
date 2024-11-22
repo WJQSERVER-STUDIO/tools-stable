@@ -86,6 +86,18 @@ function lsof(){
     wget -O install.sh ${repo_url}systools/install.sh && chmod +x install.sh && ./install.sh lsof
 }
 
+# diy
+function diy(){
+    echo -e "${green}> ${mikublue}请在下方输入你要安装的软件名称，例如：zstd、git、lsof等。"
+    read -p "> 请输入软件名称:" softwareName
+    if [ -z "$softwareName" ]; then
+        echo -e "${red}请输入正确的软件名称！"
+        diy
+    else
+        wget -O install.sh ${repo_url}systools/install.sh && chmod +x install.sh && ./install.sh $softwareName
+    fi
+}
+
 #返回主脚本
 function back(){
     wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
@@ -103,6 +115,7 @@ function start_menu(){
     option 4 "Zstd"
     option 5 "Git"
     option 6 "Lsof"
+    option 100 "DIY"
     green " =================================================="
     option 0 "退出脚本"
     echo
@@ -125,6 +138,9 @@ function start_menu(){
         ;;
         6 )
            lsof
+        ;;
+        100 )
+           diy
         ;;
         0 )
            back

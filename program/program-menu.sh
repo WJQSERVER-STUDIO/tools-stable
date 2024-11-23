@@ -134,6 +134,16 @@ function ghproxy(){
     wget -O ghproxy.sh ${repo_url}program/ghproxy/ghproxy.sh && chmod +x ghproxy.sh && ./ghproxy.sh
 }
 
+#青龙面板
+function qinglong(){
+    wget -O qinglong.sh ${repo_url}program/qinglong/qinglong.sh && chmod +x qinglong.sh && ./qinglong.sh
+}
+
+#One-Api(AI API聚合)
+function one-api(){
+    wget -O one-api.sh ${repo_url}program/ai/one-api.sh && chmod +x one-api.sh && ./one-api.sh
+}
+
 #返回主脚本
 function back(){
     wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
@@ -150,6 +160,7 @@ function start_menu(){
     menu-option 5 "服务器探针                          ${green}6. ${mikublue}Uptime-Kuma${white}"
     menu-option 7 "WebSSH                             ${green}8. ${mikublue}IP信息查询${white}"
     menu-option 9 "Git服务器                           ${green}10. ${mikublue}Github代理${white}"
+    menu-option 11 "青龙面板                           ${green}12. ${mikublue}One-Api(AI API聚合)${white}"
     green " =================================================="
     option 0 "退出脚本"
     echo
@@ -184,6 +195,12 @@ function start_menu(){
         ;;
         10 )
            ghproxy
+        ;;
+        11 )
+           qinglong
+        ;;
+        12 )
+           one-api
         ;;
         0 )
            back

@@ -58,12 +58,12 @@ sleep 1
 
 #Docker一键安装&更新
 function docker-install(){
-wget -O docker-install.sh ${repo_url}docker-manager/docker-install.sh && chmod +x docker-install.sh && ./docker-install.sh
+    wget -O docker-install.sh ${repo_url}docker-manager/docker-install.sh && chmod +x docker-install.sh && ./docker-install.sh
 }
 
 #查看Docker状态
 function docker-info(){
-wget -O docker-info.sh ${repo_url}docker-manager/docker-info.sh && chmod +x docker-info.sh && ./docker-info.sh
+    wget -O docker-info.sh ${repo_url}docker-manager/docker-info.sh && chmod +x docker-info.sh && ./docker-info.sh
 }
 
 #Docker容器资源占用查看
@@ -73,32 +73,37 @@ function docker-container-stats(){
 
 #Docker容器管理
 function docker-container(){
-wget -O docker-container.sh ${repo_url}docker-manager/docker-container.sh && chmod +x docker-container.sh && ./docker-container.sh
+    wget -O docker-container.sh ${repo_url}docker-manager/docker-container.sh && chmod +x docker-container.sh && ./docker-container.sh
 }
 
 #Docker镜像管理
 function docker-image(){
-wget -O docker-image.sh ${repo_url}docker-manager/docker-image.sh && chmod +x docker-image.sh && ./docker-image.sh
+    wget -O docker-image.sh ${repo_url}docker-manager/docker-image.sh && chmod +x docker-image.sh && ./docker-image.sh
 }
 
 #Docker网络管理
 function docker-network(){
-wget -O docker-network.sh ${repo_url}docker-manager/docker-network.sh && chmod +x docker-network.sh && ./docker-network.sh
+    wget -O docker-network.sh ${repo_url}docker-manager/docker-network.sh && chmod +x docker-network.sh && ./docker-network.sh
 }
 
 #Docker卷管理
 function docker-volume(){
-wget -O docker-volume.sh ${repo_url}docker-manager/docker-volume.sh && chmod +x docker-volume.sh && ./docker-volume.sh
+    wget -O docker-volume.sh ${repo_url}docker-manager/docker-volume.sh && chmod +x docker-volume.sh && ./docker-volume.sh
 }
 
 #清理未使用Docker资源
 function docker-rm-unused(){
-wget -O docker-rm-unused.sh ${repo_url}docker-manager/docker-rm-unused.sh && chmod +x docker-rm-unused.sh && ./docker-rm-unused.sh
+    wget -O docker-rm-unused.sh ${repo_url}docker-manager/docker-rm-unused.sh && chmod +x docker-rm-unused.sh && ./docker-rm-unused.sh
 }
 
 #Docker一键卸载
 function docker-remove(){
-wget -O docker-remove.sh ${repo_url}docker-manager/docker-remove.sh && chmod +x docker-remove.sh && ./docker-remove.sh
+    wget -O docker-remove.sh ${repo_url}docker-manager/docker-remove.sh && chmod +x docker-remove.sh && ./docker-remove.sh
+}
+
+#Docker安装脚本(trixie优化)
+function docker-install-trixie(){
+    wget -O docker-install-trixie.sh ${repo_url}docker-manager/docker-install-trixie.sh && chmod +x docker-install-trixie.sh && ./docker-install-trixie.sh
 }
 
 #返回主脚本
@@ -122,8 +127,9 @@ function start_menu(){
     option 7 "Docker卷管理"
     green " =================================================="
     option 8 "清理未使用Docker资源"
-    green " =================================================="
     option 9 "Docker一键卸载"
+    green " =================================================="
+    option 13 "Docker安装脚本(trixie优化)"
     green " =================================================="
     option 0 "退出脚本"
     echo

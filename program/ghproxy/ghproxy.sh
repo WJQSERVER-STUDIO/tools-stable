@@ -13,6 +13,7 @@ mkdir -p /root/data/docker_data/ghproxy
 cd /root/data/docker_data/ghproxy
 
 # 创建 docker-compose.yml 文件
+cat > docker-compose.yml <<EOF
 version: '3.9'
 services:
     ghproxy:

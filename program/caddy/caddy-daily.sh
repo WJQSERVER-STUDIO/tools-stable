@@ -56,6 +56,19 @@ echo -e "${mikublue}当前版本为${white}  [${yellow} V${version} ${white}]  $
 echo -e "${yellow}===================================================================="
 sleep 1
 
+# 判断caddy是否已安装
+if [ -f /root/data/caddy/caddy ]; then
+    echo -e "[${yellow}Warning${white}] $mikublue caddy已安装, 将会覆盖安装" $white
+    read -p "是否继续安装? [Y/n]" choice
+    if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+        echo -e "[${yellow}Warning${white}] $mikublue 停止caddy" $white
+        systemctl stop caddy
+        else
+            echo -e "[${red}Cancel${white}] $mikublue 取消安装" $white
+            exit 1
+    fi
+fi
+
 echo -e "[${yellow}RUN${white}] $mikublue 開始安裝Caddy" $white
 
 echo -e "${green}>${white} $mikublue 創建安裝目錄" $white

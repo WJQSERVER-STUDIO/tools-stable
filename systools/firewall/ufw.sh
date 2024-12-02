@@ -109,7 +109,7 @@ apt install fail2ban -y
 systemctl enable fail2ban 
 cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local 
 rm -rf /etc/fail2ban/jail.d/* 
-wget -O /etc/fail2ban/jail.d/sshd.local https://raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/systools/firewall/fail2ban/sshd.local 
+wget -O /etc/fail2ban/jail.d/sshd.local ${repo_url}systools/firewall/fail2ban/sshd.local 
 systemctl restart fail2ban 
 echo -e "[${green}OK${white}] $mikublue fail2ban部署完成" $white
 

@@ -71,6 +71,11 @@ function caddy_daily(){
     wget -O caddy-daily.sh ${repo_url}program/caddy/caddy-daily.sh && chmod +x caddy-daily.sh && ./caddy-daily.sh
 }
 
+# caddy dev
+function caddy_dev(){
+    wget -O caddy-dev.sh ${repo_url}program/caddy/caddy-dev.sh && chmod +x caddy-dev.sh && ./caddy-dev.sh
+}
+
 # caddy l4
 function caddy_l4(){
     wget -O caddy-l4.sh ${repo_url}program/caddy/caddy-l4.sh && chmod +x caddy-l4.sh && ./caddy-l4.sh
@@ -89,8 +94,9 @@ function start_menu(){
     green " =================================================="
     option 1 "Caddy扩展版" 
     option 2 "Caddy扩展版 Daily Build"
-    option 3 "Caddy原版"
-    option 4 "Caddy扩展版-Layer4"
+    option 3 "Caddy扩展版 Dev"
+    option 4 "Caddy原版"
+    option 5 "Caddy扩展版-Layer4"
     green " =================================================="
     option 0 "返回主脚本"
     echo
@@ -103,9 +109,12 @@ function start_menu(){
             caddy_daily
         ;;
         3 )
-            caddy_pure
+            caddy_dev
         ;;
         4 )
+            caddy_pure
+        ;;
+        5 )
             caddy_l4
         ;;
         0 )

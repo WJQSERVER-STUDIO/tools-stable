@@ -144,6 +144,11 @@ function one-api(){
     wget -O one-api.sh ${repo_url}program/ai/one-api.sh && chmod +x one-api.sh && ./one-api.sh
 }
 
+# SyncThing同步工具
+function syncthing(){
+    wget -O syncthing.sh ${repo_url}program/syncthing/syncthing.sh && chmod +x syncthing.sh && ./syncthing.sh
+}
+
 #返回主脚本
 function back(){
     wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
@@ -161,6 +166,7 @@ function start_menu(){
     menu-option 7 "WebSSH                             ${green}8. ${mikublue}IP信息查询${white}"
     menu-option 9 "Git服务器                           ${green}10. ${mikublue}Github代理${white}"
     menu-option 11 "青龙面板                           ${green}12. ${mikublue}One-Api(AI API聚合)${white}"
+    menu-option 13 "SyncThing同步工具                   "
     green " =================================================="
     option 0 "退出脚本"
     echo

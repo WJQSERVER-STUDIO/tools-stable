@@ -31,6 +31,11 @@ else
   echo
 fi
 
+# 检测/etc/sysctl.d/99-sysctl.conf是否存在
+if [! -f /etc/sysctl.d/99-sysctl.conf ]; then
+  echo "未找到 /etc/sysctl.d/99-sysctl.conf 文件"
+fi 
+
 cp /etc/sysctl.d/99-sysctl.conf /etc/sysctl.d/99-sysctl.conf.bak
 
 cat <<EOF > /etc/sysctl.d/99-sysctl.conf
@@ -76,7 +81,7 @@ sudo sysctl -p
 congestion_algorithm=$(sysctl -n net.ipv4.tcp_congestion_control)
 queue_algorithm=$(sysctl -n net.core.default_qdisc)
 
-echo -e "${mikublue}網路擁塞算法: ${yellow}$congestion_algorithm $queue_algorithm"
+echo -e "${mikublue}網路擁塞算法: ${yellow}$congestion_algorithm $queue_algorithm ${white}"
 
 #回到root目录
 cd /root

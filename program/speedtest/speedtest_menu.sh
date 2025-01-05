@@ -51,6 +51,11 @@ echo -e "${mikublue}当前版本为${white}  [${yellow} V.0.9 ${white}]  ${white
 echo -e "${yellow}===================================================================="
 sleep 1
 
+#speedtest-ex
+function speedtest-ex(){
+    wget -O speedtest-ex.sh ${repo_url}program/speedtest/speedtest-ex.sh && chmod +x speedtest-ex.sh && ./speedtest-ex.sh
+}
+
 #speedtest-x
 function speedtest-x(){
     wget -O speedtest-x.sh ${repo_url}program/speedtest/speedtest-x.sh && chmod +x speedtest-x.sh && ./speedtest-x.sh
@@ -72,18 +77,22 @@ function start_menu(){
     red " WJQserver Studio Linux工具箱"
     yellow " FROM: https://github.com/WJQSERVER-STUDIO/tools-stable "
     green " =================================================="
-    option 1 "Speedtest-X" 
-    option 2 "Liberspeed"
+    option 1 "SpeedTest-EX" 
+    option 2 "Speedtest-X" 
+    option 3 "Liberspeed"
     green " =================================================="
     option 0 "退出脚本"
     echo
     read -p " 请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           speedtest-x
+            speedtest-ex
         ;;
         2 )
-           liberspeed
+            speedtest-x
+        ;;
+        3 )
+            liberspeed
         ;;
         0 )
            back

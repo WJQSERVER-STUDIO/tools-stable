@@ -32,7 +32,7 @@ else
 fi
 
 # 检测/etc/sysctl.d/99-sysctl.conf是否存在
-if [! -f /etc/sysctl.d/99-sysctl.conf ]; then
+if [ ! -f /etc/sysctl.d/99-sysctl.conf ]; then
   echo "未找到 /etc/sysctl.d/99-sysctl.conf 文件"
 fi 
 

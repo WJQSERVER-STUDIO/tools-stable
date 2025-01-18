@@ -10,7 +10,7 @@ blue='\033[0;34m'
 red='\033[31m'
 gray='\e[37m'
 
-go_version="1.23.4"
+go_version="1.23.5"
 
 echo -e "[${green}RUN${white}] $mikublue 開始安裝XCaddy環境" $white
 echo -e "${green}>${white} $mikublue 更新軟件包" $white

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 设置默认 Hugo 扩展版的版本
-DEFAULT_HUGO_VERSION="0.146.7"
+DEFAULT_HUGO_VERSION="0.147.1"
 
 # 检查是否有传入的版本号参数
 if [ -n "$1" ]; then

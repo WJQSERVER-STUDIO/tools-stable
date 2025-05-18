@@ -49,3 +49,4 @@ forgejo:
 artalk: 172.20.20.42:23366
 speedtest-ex: 172.20.20.43:8989
 smart-git: 172.20.20.44:8080
+vaultwarden: 172.20.20.45:80
